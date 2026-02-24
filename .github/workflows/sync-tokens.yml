@@ -44,15 +44,35 @@ jobs:
       # ③ PR 자동 생성 / 업데이트
       - name: Create or update Pull Request
         id: create_pr
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: tokens/sync
-          title: 'chore(tokens): ${{ github.event.head_commit.message }}'
-          labels: tokens
-          body-path: .diff-report.md
-          commit-message: 'chore(tokens): sync from Token Studio'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="chore(tokens): ${{ github.event.head_commit.message }}"
+
+          # tokens 라벨이 없으면 생성
+          gh label create tokens --color 0075ca --description "Design token changes" 2>/dev/null || true
+
+          # 이미 열린 PR이 있는지 확인
+          PR_DATA=$(gh pr list --base main --head tokens/sync --state open --json number,url --jq '.[0]' 2>/dev/null)
+
+          if [ -n "$PR_DATA" ] && [ "$PR_DATA" != "null" ]; then
+            # 기존 PR 업데이트
+            PR_NUMBER=$(echo "$PR_DATA" | jq -r '.number')
+            PR_URL=$(echo "$PR_DATA" | jq -r '.url')
+            gh pr edit "$PR_NUMBER" --title "$TITLE" --body-file .diff-report.md
+          else
+            # 새 PR 생성
+            PR_URL=$(gh pr create \
+              --base main \
+              --head tokens/sync \
+              --title "$TITLE" \
+              --body-file .diff-report.md \
+              --label tokens)
+            PR_NUMBER=$(gh pr view "$PR_URL" --json number --jq '.number')
+          fi
+
+          echo "pull-request-number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "pull-request-url=$PR_URL" >> "$GITHUB_OUTPUT"
 
       - name: Print PR URL
         if: steps.create_pr.outputs.pull-request-url != ''
