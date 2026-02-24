@@ -10,7 +10,35 @@
         "priority": "high",
         "dependencies": [],
         "status": "done",
-        "subtasks": [],
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Token Studio 플러그인 설치 및 GitHub PAT 발급",
+            "description": "Figma Token Studio 플러그인 설치 및 GitHub Personal Access Token 발급",
+            "details": "1. Figma에서 Token Studio 플러그인 설치 (Community → Tokens Studio for Figma 검색)\n2. GitHub Personal Access Token 발급:\n   - GitHub Settings → Developer settings → Personal access tokens → Fine-grained tokens\n   - Repository 권한: ridenow-frontend read/write\n   - 권한 항목: Contents (read/write), Metadata (read)\n3. 발급된 PAT을 안전한 곳에 임시 보관",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": "1"
+          },
+          {
+            "id": 2,
+            "title": "Token Studio GitHub 연동 설정",
+            "description": "Token Studio 플러그인에서 GitHub 저장소 연동 설정 구성",
+            "details": "Token Studio 플러그인에서 GitHub 연동 설정:\n1. 플러그인 실행 → Settings → Sync → GitHub 선택\n2. 설정 값 입력:\n   - Repository: owner/ridenow-frontend\n   - Branch: tokens/sync  ← main 대신 전용 브랜치 사용\n   - File path: tokens.json\n   - Token (PAT): 1.1에서 발급한 토큰 입력\n\n⚠️ main 브랜치 직접 push 금지: PR 리뷰 플로우 유지를 위해\n   Token Studio는 항상 tokens/sync 브랜치에만 push",
+            "status": "done",
+            "dependencies": [1],
+            "parentTaskId": "1"
+          },
+          {
+            "id": 3,
+            "title": "초기 tokens.json 구조 생성 및 연결 확인",
+            "description": "W3C Design Token 형식의 초기 tokens.json 생성 및 tokens/sync 브랜치 연결 상태 확인",
+            "details": "1. Token Studio에서 W3C Design Token 형식으로 기본 토큰 구조 생성:\n   - palette (색상 토큰: gray, blue 등)\n   - typography (타이포그래피: $type: typography)\n   - space (여백: $type: dimension)\n   - shadow (그림자: $type: shadow)\n2. 플러그인 상단 Push 버튼 클릭\n3. GitHub tokens/sync 브랜치에 tokens.json 생성 확인\n4. main 브랜치에는 직접 반영되지 않았는지 확인",
+            "status": "done",
+            "dependencies": [2],
+            "parentTaskId": "1"
+          }
+        ],
         "updatedAt": "2026-02-24T00:34:24.828Z"
       },
       {

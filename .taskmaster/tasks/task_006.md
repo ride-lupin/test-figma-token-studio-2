@@ -2,9 +2,9 @@
 
 **Title:** GitHub Actions 워크플로우 구축 (검증 + PR 자동 생성)
 
-**Status:** pending
+**Status:** done
 
-**Dependencies:** 3 ✓, 5
+**Dependencies:** 3 ✓, 5 ✓
 
 **Priority:** high
 

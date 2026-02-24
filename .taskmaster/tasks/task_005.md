@@ -2,9 +2,9 @@
 
 **Title:** 개발팀 알림 시스템 구축
 
-**Status:** pending
+**Status:** done
 
-**Dependencies:** 4
+**Dependencies:** 4 ✓
 
 **Priority:** medium
 

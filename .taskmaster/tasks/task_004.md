@@ -2,7 +2,7 @@
 
 **Title:** 토큰 변경사항 Diff 리포트 생성 스크립트 개발
 
-**Status:** pending
+**Status:** done
 
 **Dependencies:** 2 ✓
 

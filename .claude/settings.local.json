@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__taskmaster-ai__get_task",
+      "mcp__taskmaster-ai__get_tasks",
+      "Bash(task-master list:*)",
+      "Bash(task-master show:*)",
+      "mcp__taskmaster-ai__expand_task",
+      "Bash(task-master expand:*)",
+      "Bash(python3:*)",
+      "Bash(task-master generate:*)"
+    ]
+  }
+}
