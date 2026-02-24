@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   publish:
@@ -19,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # git diff HEAD~1 비교를 위해 필요
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,31 +32,68 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Parse & validate Code Connect files
-        run: npx figma connect parse
+      # ① 변경 감지 리포트 생성 (배포 전 — 컴포넌트 현황 포함)
+      - name: Generate change report
+        run: node scripts/code-connect-report.js
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
 
+      # ② Figma에 배포
       - name: Publish Code Connect to Figma
         id: publish
         run: |
-          echo "## Code Connect 배포 결과" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
           if npx figma connect publish --token "$FIGMA_ACCESS_TOKEN" 2>&1 | tee publish.log; then
-            echo "✅ **배포 성공**" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            cat publish.log >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "result=success" >> $GITHUB_OUTPUT
           else
-            echo "❌ **배포 실패**" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 오류 로그" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            cat publish.log >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "result=failed" >> $GITHUB_OUTPUT
             exit 1
           fi
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+
+      # ③ 배포 결과를 리포트에 추가
+      - name: Append publish result to report
+        if: always()
+        run: |
+          node scripts/code-connect-report.js \
+            --publish-result=${{ steps.publish.outputs.result || 'failed' }}
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+
+      # ④ GitHub Actions Summary에 출력
+      - name: Write GitHub Actions Summary
+        if: always()
+        run: |
+          cat code-connect-report.md >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📄 배포 로그" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat publish.log 2>/dev/null || echo "(로그 없음)">> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      # ⑤ 연결된 PR에 코멘트
+      - name: Comment on PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=$(gh pr list \
+            --state merged \
+            --base main \
+            --json number,mergeCommit \
+            --jq ".[] | select(.mergeCommit.oid == \"${{ github.sha }}\") | .number" \
+            2>/dev/null)
+
+          if [ -n "$PR_NUMBER" ] && [ "$PR_NUMBER" != "null" ]; then
+            ACTIONS_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            {
+              cat code-connect-report.md
+              echo ""
+              echo "> [Actions 실행 결과 보기](${ACTIONS_URL})"
+            } | gh pr comment "$PR_NUMBER" --body-file -
+            echo "PR #${PR_NUMBER} 에 코멘트를 작성했습니다."
+          else
+            echo "연결된 PR을 찾을 수 없습니다. (직접 push 또는 workflow_dispatch)"
+          fi
