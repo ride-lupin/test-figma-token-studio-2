@@ -1,0 +1,73 @@
+name: Sync Design Tokens
+
+on:
+  push:
+    branches:
+      - tokens/sync
+    paths:
+      - tokens.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  sync:
+    name: Validate, Diff & Create PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # ① 유효성 검증 — 실패 시 워크플로우 중단, PR 미생성
+      - name: Validate tokens.json
+        run: node scripts/validate.js
+
+      # ② Diff 분석 — GitHub Actions Summary + .diff-report.md 생성
+      - name: Generate diff report
+        run: node scripts/diff.js
+
+      # ③ PR 자동 생성 / 업데이트
+      - name: Create or update Pull Request
+        id: create_pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: tokens/sync
+          title: 'chore(tokens): ${{ github.event.head_commit.message }}'
+          labels: tokens
+          body-path: .diff-report.md
+          commit-message: 'chore(tokens): sync from Token Studio'
+
+      - name: Print PR URL
+        if: steps.create_pr.outputs.pull-request-url != ''
+        run: echo "PR created/updated → ${{ steps.create_pr.outputs.pull-request-url }}"
+
+      # ④ 알림 (PR URL 포함) — 실패해도 워크플로우 성공 유지
+      - name: Notify (Slack / Notion / PR comment)
+        if: always()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
+          PR_URL: ${{ steps.create_pr.outputs.pull-request-url }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: node scripts/notify.js

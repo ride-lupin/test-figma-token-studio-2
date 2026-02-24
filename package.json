@@ -1,0 +1,15 @@
+{
+  "name": "figma-token-studio",
+  "version": "1.0.0",
+  "description": "Figma Token Studio - Design token management with GitHub sync",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "diff": "node scripts/diff.js",
+    "notify": "node scripts/notify.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.3.0",
+    "ajv": "^8.17.1"
+  }
+}
