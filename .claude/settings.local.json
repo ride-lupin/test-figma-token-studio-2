@@ -30,7 +30,11 @@
       "Bash(cat:*)",
       "Bash(npm run figma:connect:parse:*)",
       "Bash(npm run figma:connect:create:*)",
-      "Bash(command -v:*)"
+      "Bash(command -v:*)",
+      "Bash(curl -s:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

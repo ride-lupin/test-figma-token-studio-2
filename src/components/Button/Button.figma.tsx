@@ -3,32 +3,32 @@ import { Button } from "./Button";
 
 figma.connect(
   Button,
-  "https://www.figma.com/design/JDHC74vI5CLHmjFhtRt8bp/Ride-Design-System?node-id=3119-14696",
+  "https://www.figma.com/design/JDHC74vI5CLHmjFhtRt8bp/Ride-Design-System?node-id=3119-14779",
   {
     props: {
-      variants: figma.enum("type", {
+      variants: figma.enum("Type", {
         Fill: "solid",
         Border: "border",
-        LightFill: "lightSolid",
+        "Light Solid": "lightSolid",
       }),
-      color: figma.enum("color", {
+      color: figma.enum("Color", {
         Primary: "primary",
-        Gray: "gray",
-        Red: "red",
-        Yellow: "yellow",
-        Green: "green",
+        Neutral: "gray",
+        Negative: "red",
+        Warning: "yellow",
+        Positive: "green",
       }),
-      size: figma.enum("size", {
+      size: figma.enum("Size", {
         "56": 56,
         "48": 48,
         "40": 40,
         "32": 32,
         "28": 28,
       }),
-      disabled: figma.enum("state", {
+      disabled: figma.enum("State", {
         Disabled: true,
       }),
-      children: figma.string("text"),
+      children: figma.string("Text"),
     },
     example: ({ variants, color, size, disabled, children }) => (
       <Button variants={variants} color={color} size={size} disabled={disabled}>

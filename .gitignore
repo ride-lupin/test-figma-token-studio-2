@@ -30,3 +30,6 @@ node_modules/
 # Figma Code Connect
 *.figma.tmp
 .figma-connect-cache/
+
+# Claude local settings (may contain tokens)
+.claude/settings.local.json

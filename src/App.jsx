@@ -1,6 +1,11 @@
 import { Button } from "./components/Button";
+import TestPage from "./pages/TestPage";
 
 function App() {
+  if (window.location.pathname === "/test") {
+    return <TestPage />;
+  }
+
   return (
     <div
       style={{
