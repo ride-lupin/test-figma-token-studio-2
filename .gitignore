@@ -26,3 +26,7 @@ node_modules/
 
 # Generated reports (used as PR body, not tracked in git)
 .diff-report.md
+
+# Figma Code Connect
+*.figma.tmp
+.figma-connect-cache/

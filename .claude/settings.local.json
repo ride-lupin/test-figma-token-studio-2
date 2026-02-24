@@ -14,7 +14,23 @@
       "Bash(npm install:*)",
       "Bash(npx figma connect:*)",
       "Bash(npm audit:*)",
-      "Bash(node -e \"const d=JSON.parse\\(require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\)\\); Object.values\\(d.vulnerabilities||{}\\).filter\\(v=>v.severity===''high''\\).forEach\\(v=>console.log\\(v.name, v.severity, v.via.map?v.via.map\\(x=>typeof x===''string''?x:x.title\\).join\\('', ''\\):v.via\\)\\)\")"
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\)\\); Object.values\\(d.vulnerabilities||{}\\).filter\\(v=>v.severity===''high''\\).forEach\\(v=>console.log\\(v.name, v.severity, v.via.map?v.via.map\\(x=>typeof x===''string''?x:x.title\\).join\\('', ''\\):v.via\\)\\)\")",
+      "mcp__taskmaster-ai__set_task_status",
+      "WebSearch",
+      "WebFetch(domain:forum.figma.com)",
+      "WebFetch(domain:www.figma.com)",
+      "WebFetch(domain:developers.figma.com)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(npx mcp-cli --version)",
+      "Bash(/opt/homebrew/Caskroom/claude-code/2.1.47/claude:*)",
+      "mcp__claude_ai_Figma__get_metadata",
+      "Bash(npm run build:*)",
+      "Bash(node -e:*)",
+      "Bash(cat:*)",
+      "Bash(npm run figma:connect:parse:*)",
+      "Bash(npm run figma:connect:create:*)",
+      "Bash(command -v:*)"
     ]
   }
 }
