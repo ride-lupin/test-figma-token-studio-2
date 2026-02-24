@@ -1,0 +1,309 @@
+# Figma Token 시스템 구축
+
+## 개요
+Figma를 토큰의 원천(Source of Truth)으로 설정하고,
+디자이너가 Token Studio에서 토큰을 수정하면 GitHub를 거쳐 개발팀에 자동으로 반영되는
+단방향 동기화 파이프라인을 구축한다.
+
+### 목표
+1. Figma Token 관리 - Token Studio + GitHub 연동
+2. Figma Component - Code Connect
+3. Figma MCP를 이용해 프론트 작업 최소화
+
+
+## 배경 및 현재 상태
+
+### 현재 토큰 구조
+- 프로젝트 토큰은 외부 라이브러리 `@ride-developer/rui-web`의 `vars.*`로 관리됨
+- Vanilla Extract (CSS-in-TS) 방식으로 스타일 적용
+- Figma에도 동일한 값의 토큰이 존재하나 동기화 파이프라인 없음
+
+### 문제점
+- 디자이너가 Figma에서 토큰을 변경해도 개발팀에 자동으로 전달되지 않음
+- 코드 토큰(`vars.*`)이 Figma 토큰과 불일치해도 감지 불가
+- Figma MCP `get_design_context` 출력이 raw Tailwind + CSS 변수 형태로 생성되어
+  프로젝트 컴포넌트로 직접 활용 불가
+- Figma Variables REST API는 Enterprise 플랜 전용으로 자동화 불가
+
+### 원천(Source of Truth) 결정
+> **Figma (Token Studio)** 가 토큰의 원천입니다.
+> 모든 토큰 변경은 Figma에서 시작하며, 코드는 Figma 토큰을 따릅니다.
+
+
+## 동기화 워크플로우
+
+### 단방향 흐름 (Figma → 코드)
+
+```
+[디자이너 - Figma]
+Token Studio에서 토큰 수정
+    ↓ Push (수동, 플러그인 클릭 1회)
+[GitHub]
+packages/tokens/tokens.json 업데이트
+    ↓ (자동 트리거)
+[GitHub Actions]
+    ├── 1. tokens.json 유효성 검증
+    ├── 2. 변경 토큰 Diff 리포트 생성
+    └── 3. 개발팀 알림 발송
+    ↓
+[개발자]
+변경된 tokens.json 확인 후
+vars.* 코드에 반영 (PR)
+```
+
+### 자동화 범위
+
+| 단계 | 담당 | 자동화 여부 |
+|------|------|-----------|
+| 토큰 수정 | 디자이너 (Token Studio) | 수동 |
+| GitHub Push | 디자이너 (플러그인 클릭 1회) | 수동 |
+| GitHub Actions 실행 | 시스템 | ✅ 자동 |
+| 유효성 검증 | 시스템 | ✅ 자동 |
+| Diff 리포트 생성 | 시스템 | ✅ 자동 |
+| 개발팀 알림 | 시스템 | ✅ 자동 |
+| 코드 반영 (vars.*) | 개발자 | 수동 |
+
+> Figma Variables REST API가 Enterprise 전용이므로
+> Token Studio → GitHub Push 단계는 수동(클릭 1회)이 불가피
+
+
+## 기능 목록
+1. Token Studio GitHub 연동 초기 설정
+2. GitHub Actions 워크플로우 구축
+3. Code Connect 컴포넌트 매핑
+4. Figma MCP 코드 변환 규칙 정의
+
+
+## 기능 요구사항
+
+### 1. Token Studio GitHub 연동
+
+#### 1-1. 초기 설정 (최초 1회, 수동)
+- Figma에서 Token Studio 플러그인 설치
+- GitHub Personal Access Token 발급
+  - Fine-grained Token 권한: `ridenow-frontend` 저장소 read/write
+- Token Studio 플러그인 설정:
+  - Settings → Storage → GitHub 선택
+  - Repository: `owner/ridenow-frontend`
+  - Branch: `main`
+  - File path: `packages/tokens/tokens.json`
+- 초기 Push로 연결 상태 확인
+
+#### 1-2. tokens.json 구조
+Figma Token Studio에서 관리하는 W3C Design Token 형식:
+```json
+{
+  "palette": {
+    "gray": {
+      "900": { "$value": "#222729", "$type": "color" },
+      "700": { "$value": "#4A5256", "$type": "color" },
+      "200": { "$value": "#E7EDF0", "$type": "color" }
+    },
+    "blue": {
+      "600": { "$value": "#0A93FF", "$type": "color" }
+    }
+  },
+  "typography": {
+    "h3-bold-22": {
+      "$value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "700",
+        "fontSize": "22",
+        "lineHeight": "34"
+      },
+      "$type": "typography"
+    }
+  },
+  "space": {
+    "8":  { "$value": "8",  "$type": "dimension" },
+    "16": { "$value": "16", "$type": "dimension" },
+    "24": { "$value": "24", "$type": "dimension" }
+  },
+  "shadow": {
+    "2dp": {
+      "$value": "0 2px 16px 0 rgba(53,60,63,0.04)",
+      "$type": "shadow"
+    }
+  }
+}
+```
+
+#### 1-3. 일상적인 토큰 업데이트 흐름
+1. 디자이너: Token Studio에서 토큰 값 수정
+2. 디자이너: 플러그인 상단 Push 버튼 클릭
+3. GitHub `packages/tokens/tokens.json` 자동 업데이트
+4. GitHub Actions 자동 실행 → 개발팀 알림
+5. 개발자: 변경 내용 확인 후 `vars.*` 코드에 반영
+
+
+### 2. GitHub Actions 워크플로우 구축
+
+#### 2-1. 트리거 조건
+- `packages/tokens/tokens.json` 변경 Push 시 자동 실행
+- `workflow_dispatch`로 수동 실행 지원
+
+#### 2-2. 워크플로우 파일
+위치: `.github/workflows/sync-tokens.yml`
+
+```yaml
+name: Design Token Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/tokens/tokens.json'
+  workflow_dispatch:
+
+jobs:
+  validate-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # diff 비교를 위해 이전 커밋 포함
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate tokens.json
+        run: node packages/tokens/scripts/validate.js
+
+      - name: Generate diff report
+        run: node packages/tokens/scripts/diff.js
+
+      - name: Comment on PR or post summary
+        run: node packages/tokens/scripts/notify.js
+```
+
+#### 2-3. 유효성 검증 (`validate.js`)
+- `tokens.json` JSON 파싱 오류 확인
+- W3C Design Token 형식(`$value`, `$type`) 준수 여부 확인
+- 필수 카테고리 존재 여부 확인 (palette, space, typography)
+- 색상 값 형식 검증 (hex, rgba)
+- 검증 실패 시 GitHub Actions 실패 처리 → PR 머지 차단
+
+#### 2-4. Diff 리포트 (`diff.js`)
+- 이전 커밋의 `tokens.json`과 현재 버전 비교
+- 추가 / 변경 / 삭제된 토큰 목록 출력
+- GitHub Actions Summary에 리포트 첨부
+- 출력 예시:
+  ```
+  🎨 변경된 토큰 (3개)
+  ✏️  palette.blue.600: #0A93FF → #0080FF
+  ➕ palette.blue.700: #0066CC (신규)
+  🗑️  palette.blue.50: 삭제됨
+  ```
+
+#### 2-5. 개발팀 알림 (`notify.js`)
+알림 채널 (우선순위 순):
+
+| 채널 | 조건 | 비고 |
+|------|------|------|
+| GitHub Actions Summary | 항상 출력 | 기본 |
+| Slack DM | SLACK_BOT_TOKEN 설정 시 | 기존 시크릿 재활용 |
+| Notion DB 페이지 생성 | NOTION_TOKEN 설정 시 | 변경 이력 누적 기록 |
+| PR 코멘트 | PR 존재 시 | - |
+
+**Notion 연동 사전 준비:**
+- notion.so/my-integrations 에서 Internal Integration 생성
+- 대상 Notion Database에 Integration 권한 부여
+- GitHub Secrets 추가: `NOTION_TOKEN`, `NOTION_DATABASE_ID`
+- `@notionhq/client` 패키지 설치
+
+**Notion DB 기록 항목:**
+- 변경 일시, 커밋 메시지, 추가/변경/삭제 토큰 목록, Actions 실행 URL
+
+- 알림 내용: 변경된 토큰 수, 상세 diff, 코드 반영 요청
+
+
+### 3. Code Connect 컴포넌트 매핑
+
+#### 3-1. 매핑 대상 컴포넌트
+| Figma 컴포넌트 | 프로젝트 컴포넌트 | 경로 |
+|--------------|----------------|------|
+| Button | `<Button>` | `@ride-developer/rui-web` |
+| AccordionSection | `<AccordionSection>` | `@components/Layout` |
+| ListSection | `<ListSection>` | `@components/Layout` |
+| DataTable | `<DataTable>` | `@components/DataTable` |
+| DataGrid | `<DataGrid>` | `@components/DataGrid` |
+| TextField | `<TextField>` | `@ridenow-frontend/rui` |
+| Dialog | `<Dialog>` | `@ridenow-frontend/rui` |
+
+#### 3-2. Code Connect 설정
+- `@figma/code-connect` 패키지 설치
+- 각 컴포넌트별 `.figma.tsx` 매핑 파일 작성
+- `figma connect publish` 명령어로 Figma에 배포
+
+#### 3-3. 기대 효과
+```tsx
+// Code Connect 적용 전 (raw Tailwind - 활용 불가)
+<div className="bg-[var(--palette\/blue\/blue-600)] px-[12px] rounded-[8px]">
+  Button
+</div>
+
+// Code Connect 적용 후 (프로젝트 컴포넌트 - 바로 활용 가능)
+<Button size={32} variants="fill" color="primary">
+  Button
+</Button>
+```
+
+#### 3-4. Code Connect 배포 자동화
+- GitHub Actions에 `figma connect publish` 단계 추가
+- `.figma.tsx` 파일 변경 시 자동 배포 트리거
+
+
+### 4. Figma MCP 코드 변환 규칙 정의
+
+#### 4-1. 스타일 변환 규칙
+| Figma MCP 출력 | 프로젝트 변환 |
+|--------------|-------------|
+| `var(--palette/gray/gray-900)` | `vars.colors.gray900` |
+| `var(--palette/blue/blue-600)` | `vars.colors.blue600` |
+| `font-['Pretendard:Bold'] text-[22px]` | `vars.typoType.h3` |
+| `gap-[16px]` | `vars.space[16]` |
+| `rounded-[8px]` | `vars.borderRadius[8]` |
+
+#### 4-2. 레이아웃 변환 규칙
+| Figma 구조 | 프로젝트 컴포넌트 |
+|-----------|----------------|
+| `Asset/Section/*` | `<AccordionSection>` |
+| `Asset/Set/*` | `<ListSection>` |
+| `Asset/Data Table/*` | `<DataTable>` |
+| `Form Item` | `<DataGrid>` |
+
+#### 4-3. Vanilla Extract 스타일 작성 가이드
+- 컴포넌트별 `style.css.ts` 파일에 스타일 정의
+- 인라인 스타일 사용 금지, 반드시 `style()` 또는 `recipe()` 사용
+- 토큰 참조 시 반드시 `vars.*` 사용 (하드코딩 금지)
+
+
+## 기술 스택
+- **토큰 원천**: Figma (Token Studio 플러그인)
+- **토큰 저장**: GitHub `packages/tokens/tokens.json` (W3C Design Token 형식)
+- **CI/CD**: GitHub Actions (`tokens.json` 변경 감지 자동 트리거)
+- **스타일 시스템**: Vanilla Extract (`@vanilla-extract/css`, `@vanilla-extract/recipes`)
+- **Code Connect**: `@figma/code-connect`
+- **Figma MCP**: `mcp__figma__get_design_context`, `mcp__figma__get_variable_defs`
+
+
+## 작업 우선순위
+
+| 순서 | 작업 | 담당 | 수동/자동 |
+|------|------|------|---------|
+| 1 | Token Studio GitHub 초기 연동 | 디자이너 + 개발자 | 수동 (1회) |
+| 2 | `packages/tokens/` 디렉토리 및 초기 tokens.json 생성 | 개발자 | 수동 (1회) |
+| 3 | GitHub Actions 워크플로우 작성 | 개발자 | - |
+| 4 | 유효성 검증 / Diff / 알림 스크립트 작성 | 개발자 | - |
+| 5 | Code Connect 매핑 파일 작성 및 배포 | 개발자 | - |
+| 6 | MCP 코드 변환 규칙 문서화 | 개발자 | - |
+
+
+## 완료 기준
+- [ ] Token Studio에서 토큰 수정 후 GitHub `tokens.json` Push 정상 동작 확인
+- [ ] `tokens.json` 변경 시 GitHub Actions 자동 실행 확인
+- [ ] 유효성 검증 실패 시 Actions 오류 처리 및 머지 차단 확인
+- [ ] Diff 리포트가 Actions Summary 또는 PR 코멘트에 정상 출력 확인
+- [ ] Code Connect 배포 후 Figma MCP 출력에서 프로젝트 컴포넌트 코드 확인
