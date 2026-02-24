@@ -1,0 +1,184 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Token Studio GitHub 연동 설정 (tokens/sync 브랜치)",
+        "description": "Figma Token Studio 플러그인 설치 및 GitHub 저장소 연동 설정 — PR 플로우를 위해 tokens/sync 전용 브랜치 사용",
+        "details": "1. Figma에서 Token Studio 플러그인 설치\n2. GitHub Personal Access Token 발급 (Fine-grained Token, ridenow-frontend 저장소 read/write 권한)\n3. Token Studio 플러그인 설정:\n   - Settings → Storage → GitHub 선택\n   - Repository: owner/ridenow-frontend\n   - Branch: tokens/sync  ← main 대신 전용 브랜치 사용\n   - File path: tokens.json\n4. 초기 Push로 연결 상태 확인 (tokens/sync 브랜치에 tokens.json 생성됨)\n5. W3C Design Token 형식으로 기본 토큰 구조 생성 (palette, typography, space, shadow)\n\n⚠️ main 브랜치 직접 push 금지: PR 리뷰 플로우 유지를 위해\n   Token Studio는 항상 tokens/sync 브랜치에만 push",
+        "testStrategy": "Token Studio에서 테스트 토큰 수정 후 GitHub Push 클릭 → tokens/sync 브랜치에 tokens.json이 업데이트되는지 확인. main 브랜치에는 직접 반영되지 않아야 함",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Token Studio 플러그인 설치 및 GitHub PAT 발급",
+            "description": "Figma Token Studio 플러그인 설치 및 GitHub Personal Access Token 발급",
+            "details": "1. Figma에서 Token Studio 플러그인 설치 (Community → Tokens Studio for Figma 검색)\n2. GitHub Personal Access Token 발급:\n   - GitHub Settings → Developer settings → Personal access tokens → Fine-grained tokens\n   - Repository 권한: ridenow-frontend read/write\n   - 권한 항목: Contents (read/write), Metadata (read)\n3. 발급된 PAT을 안전한 곳에 임시 보관",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": "1",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Token Studio GitHub 연동 설정",
+            "description": "Token Studio 플러그인에서 GitHub 저장소 연동 설정 구성",
+            "details": "Token Studio 플러그인에서 GitHub 연동 설정:\n1. 플러그인 실행 → Settings → Sync → GitHub 선택\n2. 설정 값 입력:\n   - Repository: owner/ridenow-frontend\n   - Branch: tokens/sync  ← main 대신 전용 브랜치 사용\n   - File path: tokens.json\n   - Token (PAT): 1.1에서 발급한 토큰 입력\n\n⚠️ main 브랜치 직접 push 금지: PR 리뷰 플로우 유지를 위해\n   Token Studio는 항상 tokens/sync 브랜치에만 push",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "parentTaskId": "1",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "초기 tokens.json 구조 생성 및 연결 확인",
+            "description": "W3C Design Token 형식의 초기 tokens.json 생성 및 tokens/sync 브랜치 연결 상태 확인",
+            "details": "1. Token Studio에서 W3C Design Token 형식으로 기본 토큰 구조 생성:\n   - palette (색상 토큰: gray, blue 등)\n   - typography (타이포그래피: $type: typography)\n   - space (여백: $type: dimension)\n   - shadow (그림자: $type: shadow)\n2. 플러그인 상단 Push 버튼 클릭\n3. GitHub tokens/sync 브랜치에 tokens.json 생성 확인\n4. main 브랜치에는 직접 반영되지 않았는지 확인",
+            "status": "done",
+            "dependencies": [
+              2
+            ],
+            "parentTaskId": "1",
+            "parentId": "undefined"
+          }
+        ],
+        "updatedAt": "2026-02-24T00:34:24.828Z"
+      },
+      {
+        "id": "2",
+        "title": "루트 tokens.json 구조 및 스크립트 초기 설정",
+        "description": "프로젝트 루트의 tokens.json 파일 관리 구조와 스크립트 디렉토리 초기 설정",
+        "details": "1. 루트 tokens.json이 이미 존재하므로 W3C Design Token 형식으로 구조 정비\n2. scripts/ 디렉토리 생성 (프로젝트 루트 기준)\n3. package.json에 필요한 의존성 추가:\n   - @notionhq/client (Notion 연동용)\n   - ajv (JSON 스키마 검증용)\n4. tokens.json 스키마 정의 파일 생성\n5. 기본 토큰 카테고리 구조 확인 및 정비 (palette, typography, space, shadow)",
+        "testStrategy": "루트 tokens.json 파일이 올바른 W3C Design Token 형식을 따르는지 JSON 파싱 및 스키마 검증으로 확인",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-24T00:17:48.821Z"
+      },
+      {
+        "id": "3",
+        "title": "토큰 유효성 검증 스크립트 개발",
+        "description": "tokens.json 파일의 W3C Design Token 형식 준수 및 데이터 유효성을 검증하는 스크립트 작성",
+        "details": "scripts/validate.js 파일 작성:\n1. JSON 파싱 오류 확인\n2. W3C Design Token 형식 검증 ($value, $type 필드 존재)\n3. 필수 카테고리 존재 여부 확인 (palette, space, typography)\n4. 색상 값 형식 검증 (hex, rgba 패턴)\n5. 타이포그래피 객체 구조 검증 (fontFamily, fontWeight, fontSize, lineHeight)\n6. dimension 타입 숫자 값 검증\n7. shadow 타입 CSS 문법 검증\n8. 검증 실패 시 상세한 오류 메시지와 함께 exit code 1 반환",
+        "testStrategy": "유효한 tokens.json과 의도적으로 오류가 있는 tokens.json 파일로 테스트하여 올바른 검증 결과와 오류 메시지가 출력되는지 확인",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-24T00:20:32.460Z"
+      },
+      {
+        "id": "4",
+        "title": "토큰 변경사항 Diff 리포트 생성 스크립트 개발",
+        "description": "이전 커밋과 현재 tokens.json을 비교하여 변경사항을 분석하고 리포트를 생성하는 스크립트 작성",
+        "details": "scripts/diff.js 파일 작성:\n1. git show HEAD~1:tokens.json으로 이전 버전 가져오기\n2. 현재 tokens.json과 deep comparison 수행\n3. 추가된 토큰 (➕), 변경된 토큰 (✏️), 삭제된 토큰 (🗑️) 분류\n4. 변경 내용을 사람이 읽기 쉬운 형태로 포맷팅\n5. GitHub Actions Summary 형식으로 마크다운 출력\n6. 변경사항이 없을 경우 '변경사항 없음' 메시지 출력\n7. 출력 예시: '🎨 변경된 토큰 (3개)\\n✏️ palette.blue.600: #0A93FF → #0080FF'",
+        "testStrategy": "의도적으로 토큰을 수정한 테스트 커밋을 생성하여 추가/변경/삭제 케이스별로 올바른 diff 리포트가 생성되는지 확인",
+        "priority": "medium",
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-24T00:28:39.461Z"
+      },
+      {
+        "id": "5",
+        "title": "개발팀 알림 시스템 구축",
+        "description": "토큰 변경사항을 다양한 채널(GitHub Actions Summary, Slack, Notion)로 알림하는 스크립트 개발",
+        "details": "scripts/notify.js 파일 작성:\n1. GitHub Actions Summary에 diff 리포트 출력 (기본)\n2. SLACK_BOT_TOKEN 환경변수 존재 시 Slack DM 발송\n3. NOTION_TOKEN, NOTION_DATABASE_ID 환경변수 존재 시 Notion DB에 레코드 생성\n4. PR 컨텍스트에서 실행 시 PR 코멘트 추가\n5. Notion 레코드 필드: 변경일시, 커밋메시지, 추가/변경/삭제 토큰 목록, Actions URL\n6. 알림 실패 시에도 전체 워크플로우는 성공으로 처리 (알림은 부가 기능)\n7. 환경변수별 조건부 실행으로 유연한 알림 채널 설정",
+        "testStrategy": "각 알림 채널별로 환경변수를 설정/해제하며 올바른 채널에만 알림이 발송되는지 확인. Notion DB에 올바른 형식의 레코드가 생성되는지 검증",
+        "priority": "medium",
+        "dependencies": [
+          "4"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-24T00:29:49.138Z"
+      },
+      {
+        "id": "6",
+        "title": "GitHub Actions 워크플로우 구축 (검증 + PR 자동 생성)",
+        "description": "tokens/sync 브랜치 push 감지 시 자동 검증, PR 생성, diff 리포트 및 알림 워크플로우 작성",
+        "details": ".github/workflows/sync-tokens.yml 파일 작성:\n1. 트리거: tokens/sync 브랜치에 tokens.json 변경 push 시 + workflow_dispatch\n2. ubuntu-latest 환경에서 Node.js 20 설정\n3. fetch-depth: 0으로 전체 히스토리 체크아웃\n4. validate.js 실행하여 토큰 유효성 검증 (실패 시 워크플로우 중단, PR 미생성)\n5. diff.js 실행하여 변경사항 분석\n6. PR 자동 생성/업데이트 (gh CLI 또는 peter-evans/create-pull-request 액션 활용):\n   - tokens/sync → main 방향으로 PR 생성\n   - 이미 열린 PR이 있으면 본문만 업데이트 (중복 방지)\n   - PR 제목: \"chore(tokens): {커밋 메시지}\"\n   - PR 본문: diff 리포트 자동 삽입\n   - label: \"tokens\" 자동 부착\n7. notify.js 실행하여 Slack/Notion 알림 (PR URL 포함)\n8. GitHub Secrets: SLACK_BOT_TOKEN, NOTION_TOKEN, NOTION_DATABASE_ID (선택적)\n   GH_TOKEN은 GITHUB_TOKEN 자동 제공 활용",
+        "testStrategy": "tokens/sync 브랜치에 tokens.json 수정 후 push → ① 검증 통과, ② main으로의 PR 자동 생성, ③ PR 본문에 diff 리포트 포함 확인. 의도적 오류 토큰 push 시 검증 실패로 PR 미생성 확인",
+        "priority": "high",
+        "dependencies": [
+          "3",
+          "5"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-24T00:30:13.419Z"
+      },
+      {
+        "id": "7",
+        "title": "Code Connect 패키지 설치 및 기본 설정",
+        "description": "Figma Code Connect를 위한 패키지 설치 및 기본 설정 구성",
+        "details": "1. @figma/code-connect 패키지 설치\n2. figma.config.ts 파일 생성 및 기본 설정\n3. Figma Personal Access Token 발급 (Code Connect용)\n4. .env 파일에 FIGMA_ACCESS_TOKEN 추가\n5. package.json에 Code Connect 관련 스크립트 추가:\n   - figma:connect:create\n   - figma:connect:publish\n   - figma:connect:parse\n6. .gitignore에 Figma 관련 임시 파일 패턴 추가\n7. Code Connect 디렉토리 구조 계획 수립",
+        "testStrategy": "figma connect --help 명령어가 정상 작동하고, Figma 토큰 인증이 성공하는지 확인. 기본 설정 파일들이 올바른 형식으로 생성되었는지 검증",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [],
+        "updatedAt": "2026-02-24T02:49:02.978Z"
+      },
+      {
+        "id": "8",
+        "title": "주요 컴포넌트 Code Connect 매핑 파일 작성",
+        "description": "Button, AccordionSection, ListSection 등 주요 컴포넌트의 Figma-Code 매핑 파일 작성",
+        "details": "각 컴포넌트별 .figma.tsx 매핑 파일 작성:\n1. Button 컴포넌트 (@ride-developer/rui-web)\n2. AccordionSection 컴포넌트 (@components/Layout)\n3. ListSection 컴포넌트 (@components/Layout)\n4. DataTable 컴포넌트 (@components/DataTable)\n5. DataGrid 컴포넌트 (@components/DataGrid)\n6. TextField 컴포넌트 (@ridenow-frontend/rui)\n7. Dialog 컴포넌트 (@ridenow-frontend/rui)\n\n각 매핑 파일에서:\n- figmaNode로 Figma 컴포넌트 ID 연결\n- props 매핑 정의 (size, variants, color 등)\n- example 코드 제공\n- imports 경로 정확히 설정",
+        "testStrategy": "각 .figma.tsx 파일이 올바른 TypeScript 문법으로 작성되었는지 확인. figma connect parse 명령어로 매핑 파일 파싱이 성공하는지 검증",
+        "priority": "medium",
+        "dependencies": [
+          "7"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "9",
+        "title": "Code Connect 자동 배포 시스템 구축",
+        "description": "Code Connect 매핑 파일 변경 시 Figma에 자동 배포하는 GitHub Actions 워크플로우 구축",
+        "details": "1. .github/workflows/deploy-code-connect.yml 파일 작성\n2. 트리거: **/*.figma.tsx 파일 변경 시 + workflow_dispatch\n3. Node.js 환경 설정 및 의존성 설치\n4. FIGMA_ACCESS_TOKEN 시크릿 설정\n5. figma connect publish 명령어 실행\n6. 배포 성공/실패 결과를 GitHub Actions Summary에 출력\n7. 배포 실패 시 상세 오류 로그 출력\n8. 기존 sync-tokens.yml 워크플로우에 Code Connect 배포 단계 추가 (선택적)\n9. 배포 결과를 Slack으로 알림 (선택적)",
+        "testStrategy": ".figma.tsx 파일을 수정하여 커밋 시 워크플로우가 자동 실행되고, figma connect publish가 성공하는지 확인. Figma에서 업데이트된 Code Connect 정보가 반영되었는지 검증",
+        "priority": "low",
+        "dependencies": [
+          "8"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "10",
+        "title": "Figma MCP 코드 변환 규칙 문서화 및 가이드 작성",
+        "description": "Figma MCP 출력을 프로젝트 컴포넌트 코드로 변환하는 규칙과 Vanilla Extract 스타일 작성 가이드 문서화",
+        "details": "1. docs/figma-mcp-conversion-guide.md 파일 작성\n2. 스타일 변환 규칙 정의:\n   - CSS 변수 → vars.* 토큰 매핑 테이블\n   - Tailwind 클래스 → Vanilla Extract 스타일 변환\n   - 타이포그래피 클래스 → vars.typoType 매핑\n3. 레이아웃 변환 규칙 정의:\n   - Figma 구조 → 프로젝트 컴포넌트 매핑\n   - Asset/Section → AccordionSection\n   - Asset/Set → ListSection 등\n4. Vanilla Extract 스타일 작성 가이드:\n   - style.css.ts 파일 구조\n   - recipe() 사용법\n   - vars.* 토큰 참조 방법\n   - 인라인 스타일 금지 규칙\n5. 실제 변환 예시 코드 제공\n6. 자주 발생하는 변환 패턴 정리",
+        "testStrategy": "문서의 변환 규칙을 따라 실제 Figma MCP 출력을 프로젝트 코드로 변환해보고, 올바르게 작동하는지 확인. 가이드의 예시 코드들이 실제 프로젝트에서 컴파일되고 실행되는지 검증",
+        "priority": "low",
+        "dependencies": [
+          "8"
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2026-02-24T02:49:02.979Z",
+      "taskCount": 10,
+      "completedCount": 6,
+      "tags": [
+        "master"
+      ]
+    }
+  }
+}

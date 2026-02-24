@@ -4,12 +4,28 @@
   "description": "Figma Token Studio - Design token management with GitHub sync",
   "private": true,
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "validate": "node scripts/validate.js",
     "diff": "node scripts/diff.js",
-    "notify": "node scripts/notify.js"
+    "notify": "node scripts/notify.js",
+    "figma:connect:create": "figma connect create",
+    "figma:connect:publish": "figma connect publish",
+    "figma:connect:parse": "figma connect parse"
   },
   "dependencies": {
     "@notionhq/client": "^2.3.0",
-    "ajv": "^8.17.1"
+    "@vanilla-extract/css": "^1.18.0",
+    "@vanilla-extract/recipes": "^0.5.7",
+    "ajv": "^8.17.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@figma/code-connect": "^1.4.1",
+    "@vanilla-extract/vite-plugin": "^5.1.4",
+    "@vitejs/plugin-react": "^5.1.4",
+    "vite": "^7.3.1"
   }
 }
