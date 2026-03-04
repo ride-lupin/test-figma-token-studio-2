@@ -3,7 +3,7 @@ name: Sync Design Tokens
 on:
   push:
     branches:
-      - tokens/sync
+      - dev
     paths:
       - tokens.json
   workflow_dispatch:
@@ -53,7 +53,7 @@ jobs:
           gh label create tokens --color 0075ca --description "Design token changes" 2>/dev/null || true
 
           # 이미 열린 PR이 있는지 확인
-          PR_DATA=$(gh pr list --base main --head tokens/sync --state open --json number,url --jq '.[0]' 2>/dev/null)
+          PR_DATA=$(gh pr list --base main --head dev --state open --json number,url --jq '.[0]' 2>/dev/null)
 
           if [ -n "$PR_DATA" ] && [ "$PR_DATA" != "null" ]; then
             # 기존 PR 업데이트
@@ -64,7 +64,7 @@ jobs:
             # 새 PR 생성
             PR_URL=$(gh pr create \
               --base main \
-              --head tokens/sync \
+              --head dev \
               --title "$TITLE" \
               --body-file .diff-report.md \
               --label tokens)
