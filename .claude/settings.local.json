@@ -34,7 +34,12 @@
       "Bash(curl -s:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(npx task-master:*)",
+      "Bash(grep:*)",
+      "Bash(node:*)"
     ]
   }
 }

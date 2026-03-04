@@ -12,7 +12,8 @@
     "notify": "node scripts/notify.js",
     "figma:connect:create": "figma connect create",
     "figma:connect:publish": "figma connect publish",
-    "figma:connect:parse": "figma connect parse"
+    "figma:connect:parse": "figma connect parse",
+    "tokens:generate": "node scripts/generate-theme.js"
   },
   "dependencies": {
     "@notionhq/client": "^2.3.0",
