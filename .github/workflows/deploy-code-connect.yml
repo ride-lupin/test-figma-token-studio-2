@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'src/**/*.figma.tsx'
+      - "src/**/*.figma.tsx"
   workflow_dispatch:
 
 permissions:
@@ -21,13 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # git diff HEAD~1 비교를 위해 필요
+          fetch-depth: 2 # git diff HEAD~1 비교를 위해 필요
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
