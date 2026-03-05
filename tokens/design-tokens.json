@@ -1,1310 +1,2097 @@
 {
   "colors": {
-    "Palette": {
-      "Common": {
-        "Black": {
-          "value": "#000000",
-          "opacity": 1
-        },
-        "White": {
+    "color": {
+      "common": {
+        "white": {
           "value": "#ffffff",
-          "opacity": 1
+          "opacity": 1,
+          "description": "순수 흰색"
+        },
+        "black": {
+          "value": "#000000",
+          "opacity": 1,
+          "description": "순수 검정"
         }
       },
-      "Blue": {
-        "Blue 900": {
-          "value": "#0b3e91",
+      "blue": {
+        "50": {
+          "value": "#f6fbff",
           "opacity": 1
         },
-        "Blue 800": {
-          "value": "#075db4",
+        "100": {
+          "value": "#ebf6ff",
           "opacity": 1
         },
-        "Blue 700": {
-          "value": "#0779df",
-          "opacity": 1
-        },
-        "Blue 600": {
-          "value": "#0a93ff",
-          "opacity": 1
-        },
-        "Blue 500": {
-          "value": "#5bb7ff",
-          "opacity": 1
-        },
-        "Blue 400": {
-          "value": "#b4ddff",
-          "opacity": 1
-        },
-        "Blue 300": {
-          "value": "#d4ecff",
-          "opacity": 1
-        },
-        "Blue 200": {
+        "200": {
           "value": "#e2f2ff",
           "opacity": 1
         },
-        "Blue 100": {
-          "value": "#ecf6ff",
+        "300": {
+          "value": "#d4ecff",
           "opacity": 1
         },
-        "Blue 50": {
-          "value": "#f6fbff",
+        "400": {
+          "value": "#b3ddff",
+          "opacity": 1
+        },
+        "500": {
+          "value": "#5bb7ff",
+          "opacity": 1
+        },
+        "600": {
+          "value": "#0a93ff",
+          "opacity": 1,
+          "description": "Ride 브랜드 컬러 (Primary Normal)"
+        },
+        "700": {
+          "value": "#0679df",
+          "opacity": 1
+        },
+        "800": {
+          "value": "#065cb3",
+          "opacity": 1
+        },
+        "900": {
+          "value": "#0b3e91",
           "opacity": 1
         }
       },
-      "Gray": {
-        "Gray 900": {
-          "value": "#222729",
+      "gray": {
+        "50": {
+          "value": "#f7f9fa",
           "opacity": 1
         },
-        "Gray 800": {
-          "value": "#353c3f",
+        "100": {
+          "value": "#f1f4f6",
           "opacity": 1
         },
-        "Gray 700": {
-          "value": "#4a5256",
+        "200": {
+          "value": "#e7edf0",
           "opacity": 1
         },
-        "Gray 600": {
-          "value": "#5e696e",
+        "300": {
+          "value": "#cfd5d9",
           "opacity": 1
         },
-        "Gray 500": {
-          "value": "#6e777c",
-          "opacity": 1
-        },
-        "Gray 400": {
+        "400": {
           "value": "#aeb7bc",
           "opacity": 1
         },
-        "Gray 300": {
-          "value": "#cfd6d9",
+        "500": {
+          "value": "#6e777c",
+          "opacity": 1,
+          "description": "중간 회색"
+        },
+        "600": {
+          "value": "#5e686e",
           "opacity": 1
         },
-        "Gray 200": {
-          "value": "#e7edf0",
+        "700": {
+          "value": "#4a5256",
           "opacity": 1
         },
-        "Gray 100": {
-          "value": "#f1f4f6",
+        "800": {
+          "value": "#353b3f",
           "opacity": 1
         },
-        "Gray 50": {
-          "value": "#f7f9fa",
-          "opacity": 1
+        "900": {
+          "value": "#222629",
+          "opacity": 1,
+          "description": "가장 어두운 회색"
+        },
+        "1000": {
+          "value": "#121414",
+          "opacity": 1,
+          "description": "가장 어두운 회색"
         }
       },
-      "Red": {
-        "Red 900": {
-          "value": "#792523",
+      "red": {
+        "50": {
+          "value": "#ffefef",
           "opacity": 1
         },
-        "Red 800": {
-          "value": "#9f3433",
-          "opacity": 1
-        },
-        "Red 700": {
-          "value": "#c54343",
-          "opacity": 1
-        },
-        "Red 600": {
-          "value": "#d64c4c",
-          "opacity": 1
-        },
-        "Red 500": {
-          "value": "#da5b5b",
-          "opacity": 1
-        },
-        "Red 400": {
-          "value": "#de6969",
-          "opacity": 1
-        },
-        "Red 300": {
-          "value": "#e68686",
-          "opacity": 1
-        },
-        "Red 200": {
-          "value": "#f2b2b2",
-          "opacity": 1
-        },
-        "Red 100": {
+        "100": {
           "value": "#fad8d8",
           "opacity": 1
         },
-        "Red 50": {
-          "value": "#ffefef",
+        "200": {
+          "value": "#f2b2b2",
+          "opacity": 1
+        },
+        "300": {
+          "value": "#e68686",
+          "opacity": 1
+        },
+        "400": {
+          "value": "#de6969",
+          "opacity": 1
+        },
+        "500": {
+          "value": "#da5b5b",
+          "opacity": 1
+        },
+        "600": {
+          "value": "#d64c4c",
+          "opacity": 1,
+          "description": "Ride critical 컬러"
+        },
+        "700": {
+          "value": "#c54343",
+          "opacity": 1
+        },
+        "800": {
+          "value": "#9f3433",
+          "opacity": 1
+        },
+        "900": {
+          "value": "#792523",
           "opacity": 1
         }
       },
-      "Yellow": {
-        "Yellow 900": {
-          "value": "#e4a400",
+      "yellow": {
+        "50": {
+          "value": "#fff7d8",
           "opacity": 1
         },
-        "Yellow 800": {
-          "value": "#fbb500",
-          "opacity": 1
-        },
-        "Yellow 700": {
-          "value": "#fdc100",
-          "opacity": 1
-        },
-        "Yellow 600": {
-          "value": "#ffcc00",
-          "opacity": 1
-        },
-        "Yellow 500": {
-          "value": "#ffd633",
-          "opacity": 1
-        },
-        "Yellow 400": {
-          "value": "#ffe066",
-          "opacity": 1
-        },
-        "Yellow 300": {
-          "value": "#ffe88d",
-          "opacity": 1
-        },
-        "Yellow 200": {
-          "value": "#fff0b3",
-          "opacity": 1
-        },
-        "Yellow 100": {
+        "100": {
           "value": "#fff4c6",
           "opacity": 1
         },
-        "Yellow 50": {
-          "value": "#fff7d9",
+        "200": {
+          "value": "#ffefb2",
+          "opacity": 1
+        },
+        "300": {
+          "value": "#ffe88d",
+          "opacity": 1
+        },
+        "400": {
+          "value": "#ffe065",
+          "opacity": 1
+        },
+        "500": {
+          "value": "#ffd633",
+          "opacity": 1
+        },
+        "600": {
+          "value": "#ffcc00",
+          "opacity": 1,
+          "description": "Ride warning 컬러"
+        },
+        "700": {
+          "value": "#fdc100",
+          "opacity": 1
+        },
+        "800": {
+          "value": "#fab400",
+          "opacity": 1
+        },
+        "900": {
+          "value": "#e4a400",
           "opacity": 1
         }
       },
-      "Green": {
-        "Green 900": {
-          "value": "#018827",
+      "green": {
+        "50": {
+          "value": "#eaf9ee",
           "opacity": 1
         },
-        "Green 800": {
-          "value": "#0a9a32",
-          "opacity": 1
-        },
-        "Green 700": {
-          "value": "#10ac4c",
-          "opacity": 1
-        },
-        "Green 600": {
-          "value": "#15bd66",
-          "opacity": 1
-        },
-        "Green 500": {
-          "value": "#41ca80",
-          "opacity": 1
-        },
-        "Green 400": {
-          "value": "#6cd69a",
-          "opacity": 1
-        },
-        "Green 300": {
-          "value": "#97e2b4",
-          "opacity": 1
-        },
-        "Green 200": {
-          "value": "#c2eece",
-          "opacity": 1
-        },
-        "Green 100": {
+        "100": {
           "value": "#d7f4df",
           "opacity": 1
         },
-        "Green 50": {
-          "value": "#ebfaef",
+        "200": {
+          "value": "#c2eece",
+          "opacity": 1
+        },
+        "300": {
+          "value": "#97e2b4",
+          "opacity": 1
+        },
+        "400": {
+          "value": "#6cd69a",
+          "opacity": 1
+        },
+        "500": {
+          "value": "#41ca80",
+          "opacity": 1
+        },
+        "600": {
+          "value": "#15bd66",
+          "opacity": 1,
+          "description": "Ride success 컬러"
+        },
+        "700": {
+          "value": "#10ac4c",
+          "opacity": 1
+        },
+        "800": {
+          "value": "#099a32",
+          "opacity": 1
+        },
+        "900": {
+          "value": "#018827",
           "opacity": 1
         }
       },
-      "Oxford": {
-        "Oxford 900": {
-          "value": "#030319",
+      "oxford": {
+        "50": {
+          "value": "#dadaee",
           "opacity": 1
         },
-        "Oxford 800": {
-          "value": "#0c0c30",
-          "opacity": 1
-        },
-        "Oxford 700": {
-          "value": "#202042",
-          "opacity": 1
-        },
-        "Oxford 600": {
-          "value": "#333354",
-          "opacity": 1
-        },
-        "Oxford 500": {
-          "value": "#474766",
-          "opacity": 1
-        },
-        "Oxford 400": {
-          "value": "#5a5a78",
-          "opacity": 1
-        },
-        "Oxford 300": {
-          "value": "#73738f",
-          "opacity": 1
-        },
-        "Oxford 200": {
-          "value": "#a7a7bf",
-          "opacity": 1
-        },
-        "Oxford 100": {
+        "100": {
           "value": "#c1c1d7",
           "opacity": 1
         },
-        "Oxford 50": {
+        "200": {
+          "value": "#a7a7bf",
+          "opacity": 1
+        },
+        "300": {
+          "value": "#73738f",
+          "opacity": 1
+        },
+        "400": {
+          "value": "#5a5a78",
+          "opacity": 1
+        },
+        "500": {
+          "value": "#474766",
+          "opacity": 1
+        },
+        "600": {
+          "value": "#333354",
+          "opacity": 1,
+          "description": "Ride oxford 보조 컬러"
+        },
+        "700": {
+          "value": "#202042",
+          "opacity": 1
+        },
+        "800": {
+          "value": "#0c0c30",
+          "opacity": 1
+        },
+        "900": {
+          "value": "#030319",
+          "opacity": 1
+        }
+      },
+      "social": {
+        "kakao": {
+          "value": "#fee500",
+          "opacity": 1,
+          "description": "카카오 브랜드 컬러"
+        },
+        "naver": {
+          "value": "#03cf5d",
+          "opacity": 1,
+          "description": "네이버 브랜드 컬러"
+        },
+        "apple": {
+          "value": "#000000",
+          "opacity": 1,
+          "description": "애플 브랜드 컬러"
+        },
+        "google": {
+          "value": "#f2f2f2",
+          "opacity": 1,
+          "description": "구글 브랜드 컬러"
+        }
+      },
+      "fg": {
+        "brand-solid": {
+          "value": "#0a93ff",
+          "opacity": 1,
+          "description": "브랜드 텍스트 (강조) — Ride Primary Normal"
+        },
+        "brand-solid-pressed": {
+          "value": "#0679df",
+          "opacity": 1,
+          "description": "브랜드 텍스트 (눌렀을 때) — Ride Primary Strong"
+        },
+        "brand-weak": {
+          "value": "#5bb7ff",
+          "opacity": 1,
+          "description": "브랜드 텍스트 (약한 강조)"
+        },
+        "brand-muted": {
+          "value": "#b3ddff",
+          "opacity": 1,
+          "description": "브랜드 텍스트 (흐림)"
+        },
+        "brand-contrast": {
+          "value": "#ffffff",
+          "opacity": 1,
+          "description": "브랜드 배경 위 텍스트 (흰색)"
+        },
+        "neutral": {
+          "value": "#222629",
+          "opacity": 1,
+          "description": "기본 텍스트 색상 — Ride Label Primary"
+        },
+        "neutral-weak": {
+          "value": "#4a5256",
+          "opacity": 1,
+          "description": "부가 정보 텍스트"
+        },
+        "neutral-muted": {
+          "value": "#5e686e",
+          "opacity": 1,
+          "description": "흐린 텍스트 (placeholder) — Ride Label Secondary"
+        },
+        "neutral-subtle": {
+          "value": "#6e777c",
+          "opacity": 1,
+          "description": "매우 연한 텍스트"
+        },
+        "neutral-inverted": {
+          "value": "#ffffff",
+          "opacity": 1,
+          "description": "어두운 배경 위 텍스트"
+        },
+        "success-solid": {
+          "value": "#15bd66",
+          "opacity": 1,
+          "description": "성공/긍정 텍스트"
+        },
+        "success-solid-pressed": {
+          "value": "#10ac4c",
+          "opacity": 1,
+          "description": "성공 텍스트 (눌렀을 때)"
+        },
+        "success-weak": {
+          "value": "#41ca80",
+          "opacity": 1
+        },
+        "success-muted": {
+          "value": "#6cd69a",
+          "opacity": 1
+        },
+        "success-contrast": {
+          "value": "#ffffff",
+          "opacity": 1,
+          "description": "초록 배경 위 텍스트"
+        },
+        "warning-solid": {
+          "value": "#fdc100",
+          "opacity": 1,
+          "description": "경고 텍스트"
+        },
+        "warning-solid-pressed": {
+          "value": "#fab400",
+          "opacity": 1,
+          "description": "경고 텍스트 (눌렀을 때)"
+        },
+        "warning-weak": {
+          "value": "#ffcc00",
+          "opacity": 1
+        },
+        "warning-muted": {
+          "value": "#ffd633",
+          "opacity": 1
+        },
+        "warning-contrast": {
+          "value": "#222629",
+          "opacity": 1,
+          "description": "노란 배경 위 텍스트 (검정)"
+        },
+        "critical-solid": {
+          "value": "#d64c4c",
+          "opacity": 1,
+          "description": "오류/위험 텍스트"
+        },
+        "critical-solid-pressed": {
+          "value": "#c54343",
+          "opacity": 1,
+          "description": "오류 텍스트 (눌렀을 때)"
+        },
+        "critical-weak": {
+          "value": "#da5b5b",
+          "opacity": 1
+        },
+        "critical-muted": {
+          "value": "#de6969",
+          "opacity": 1
+        },
+        "critical-contrast": {
+          "value": "#ffffff",
+          "opacity": 1,
+          "description": "빨간 배경 위 텍스트"
+        },
+        "info-solid": {
+          "value": "#5e686e",
+          "opacity": 1,
+          "description": "정보 텍스트 (Gray 기반)"
+        },
+        "info-solid-pressed": {
+          "value": "#4a5256",
+          "opacity": 1,
+          "description": "정보 텍스트 (눌렀을 때)"
+        },
+        "info-weak": {
+          "value": "#6e777c",
+          "opacity": 1
+        },
+        "info-muted": {
+          "value": "#aeb7bc",
+          "opacity": 1
+        },
+        "info-contrast": {
+          "value": "#ffffff",
+          "opacity": 1,
+          "description": "회색 배경 위 텍스트"
+        },
+        "oxford-solid": {
+          "value": "#333354",
+          "opacity": 1,
+          "description": "Oxford 텍스트"
+        },
+        "oxford-solid-pressed": {
+          "value": "#202042",
+          "opacity": 1
+        },
+        "oxford-weak": {
+          "value": "#474766",
+          "opacity": 1
+        },
+        "oxford-muted": {
+          "value": "#5a5a78",
+          "opacity": 1
+        },
+        "oxford-contrast": {
+          "value": "#ffffff",
+          "opacity": 1
+        }
+      },
+      "bg": {
+        "brand-solid": {
+          "value": "#0a93ff",
+          "opacity": 1,
+          "description": "브랜드 배경 (버튼 등) — Ride Primary Normal"
+        },
+        "brand-solid-pressed": {
+          "value": "#0679df",
+          "opacity": 1,
+          "description": "브랜드 배경 (눌렀을 때)"
+        },
+        "brand-weak": {
+          "value": "#ebf6ff",
+          "opacity": 1,
+          "description": "연한 브랜드 배경"
+        },
+        "brand-subtle": {
+          "value": "#f6fbff",
+          "opacity": 1,
+          "description": "매우 연한 브랜드 배경"
+        },
+        "brand-inverted": {
+          "value": "#065cb3",
+          "opacity": 1,
+          "description": "어두운 브랜드 배경 — Ride Primary Heavy"
+        },
+        "neutral": {
+          "value": "#222629",
+          "opacity": 1,
+          "description": "기본 배경 (페이지) — Ride Background Primary"
+        },
+        "neutral-solid": {
+          "value": "#f1f4f6",
+          "opacity": 1,
+          "description": "중립 배경 (카드, 패널) — Ride Background Secondary"
+        },
+        "neutral-weak": {
+          "value": "#e7edf0",
+          "opacity": 1,
+          "description": "약한 중립 배경 — Ride Background Tertiary"
+        },
+        "neutral-muted": {
+          "value": "#cfd5d9",
+          "opacity": 1,
+          "description": "흐린 중립 배경"
+        },
+        "neutral-subtle": {
+          "value": "#f7f9fa",
+          "opacity": 1,
+          "description": "매우 연한 중립 배경"
+        },
+        "neutral-inverted": {
+          "value": "#222629",
+          "opacity": 1,
+          "description": "어두운 배경"
+        },
+        "success-solid": {
+          "value": "#41ca80",
+          "opacity": 1,
+          "description": "성공 배경 (버튼)"
+        },
+        "success-solid-pressed": {
+          "value": "#15bd66",
+          "opacity": 1,
+          "description": "성공 배경 (눌렀을 때)"
+        },
+        "success-weak": {
+          "value": "#d7f4df",
+          "opacity": 1,
+          "description": "연한 성공 배경"
+        },
+        "success-subtle": {
+          "value": "#eaf9ee",
+          "opacity": 1,
+          "description": "매우 연한 성공 배경"
+        },
+        "warning-solid": {
+          "value": "#ffe065",
+          "opacity": 1,
+          "description": "경고 배경 (버튼)"
+        },
+        "warning-solid-pressed": {
+          "value": "#ffd633",
+          "opacity": 1,
+          "description": "경고 배경 (눌렀을 때)"
+        },
+        "warning-weak": {
+          "value": "#fff4c6",
+          "opacity": 1,
+          "description": "연한 경고 배경"
+        },
+        "warning-subtle": {
+          "value": "#fff7d8",
+          "opacity": 1,
+          "description": "매우 연한 경고 배경"
+        },
+        "critical-solid": {
+          "value": "#d64c4c",
+          "opacity": 1,
+          "description": "오류 배경 (버튼)"
+        },
+        "critical-solid-pressed": {
+          "value": "#c54343",
+          "opacity": 1,
+          "description": "오류 배경 (눌렀을 때)"
+        },
+        "critical-weak": {
+          "value": "#fad8d8",
+          "opacity": 1,
+          "description": "연한 오류 배경"
+        },
+        "critical-subtle": {
+          "value": "#ffefef",
+          "opacity": 1,
+          "description": "매우 연한 오류 배경"
+        },
+        "info-solid": {
+          "value": "#6e777c",
+          "opacity": 1,
+          "description": "정보 배경 (Gray 기반)"
+        },
+        "info-solid-pressed": {
+          "value": "#5e686e",
+          "opacity": 1,
+          "description": "정보 배경 (눌렀을 때)"
+        },
+        "info-weak": {
+          "value": "#f1f4f6",
+          "opacity": 1,
+          "description": "연한 정보 배경"
+        },
+        "info-subtle": {
+          "value": "#f7f9fa",
+          "opacity": 1,
+          "description": "매우 연한 정보 배경"
+        },
+        "oxford-solid": {
+          "value": "#474766",
+          "opacity": 1,
+          "description": "Oxford 배경"
+        },
+        "oxford-solid-pressed": {
+          "value": "#333354",
+          "opacity": 1
+        },
+        "oxford-weak": {
+          "value": "#c1c1d7",
+          "opacity": 1
+        },
+        "oxford-subtle": {
           "value": "#dadaee",
+          "opacity": 1
+        }
+      },
+      "stroke": {
+        "brand-solid": {
+          "value": "#0a93ff",
+          "opacity": 1,
+          "description": "브랜드 테두리"
+        },
+        "brand-solid-pressed": {
+          "value": "#0679df",
+          "opacity": 1,
+          "description": "브랜드 테두리 (눌렀을 때)"
+        },
+        "brand-weak": {
+          "value": "#d4ecff",
+          "opacity": 1,
+          "description": "연한 브랜드 테두리"
+        },
+        "neutral": {
+          "value": "#222629",
+          "opacity": 1,
+          "description": "기본 테두리 (구분선) — Ride Divider Medium"
+        },
+        "neutral-weak": {
+          "value": "#e7edf0",
+          "opacity": 1,
+          "description": "약한 테두리 — Ride Divider Light"
+        },
+        "neutral-muted": {
+          "value": "#f1f4f6",
+          "opacity": 1,
+          "description": "매우 연한 테두리 — Ride Divider ExLight"
+        },
+        "success-solid": {
+          "value": "#41ca80",
+          "opacity": 1,
+          "description": "성공 테두리"
+        },
+        "success-solid-pressed": {
+          "value": "#15bd66",
+          "opacity": 1
+        },
+        "success-weak": {
+          "value": "#97e2b4",
+          "opacity": 1
+        },
+        "warning-solid": {
+          "value": "#ffe065",
+          "opacity": 1,
+          "description": "경고 테두리"
+        },
+        "warning-solid-pressed": {
+          "value": "#ffd633",
+          "opacity": 1
+        },
+        "warning-weak": {
+          "value": "#ffefb2",
+          "opacity": 1
+        },
+        "critical-solid": {
+          "value": "#d64c4c",
+          "opacity": 1,
+          "description": "오류 테두리"
+        },
+        "critical-solid-pressed": {
+          "value": "#c54343",
+          "opacity": 1
+        },
+        "critical-weak": {
+          "value": "#e68686",
+          "opacity": 1
+        },
+        "info-solid": {
+          "value": "#6e777c",
+          "opacity": 1,
+          "description": "정보 테두리 (Gray 기반)"
+        },
+        "info-solid-pressed": {
+          "value": "#5e686e",
+          "opacity": 1
+        },
+        "info-weak": {
+          "value": "#cfd5d9",
+          "opacity": 1
+        },
+        "oxford-solid": {
+          "value": "#474766",
+          "opacity": 1,
+          "description": "Oxford 테두리"
+        },
+        "oxford-solid-pressed": {
+          "value": "#333354",
+          "opacity": 1
+        },
+        "oxford-weak": {
+          "value": "#73738f",
           "opacity": 1
         }
       }
     },
-    "Sementic": {
-      "Primary": {
-        "Normal": {
-          "value": "#0a93ff",
-          "opacity": 1,
-          "description": "blue 600"
-        },
-        "Strong": {
-          "value": "#0779df",
-          "opacity": 1,
-          "description": "blue 700"
-        },
-        "Heavy": {
-          "value": "#075db4",
-          "opacity": 1,
-          "description": "blue 800"
-        }
-      },
-      "Background": {
-        "Primary": {
-          "value": "#ffffff",
-          "opacity": 1,
-          "description": "white"
-        },
-        "Secondary": {
-          "value": "#f1f4f6",
-          "opacity": 1,
-          "description": "gray 100"
-        },
-        "Tertiary": {
-          "value": "#e7edf0",
-          "opacity": 1,
-          "description": "gray 200"
-        }
-      },
-      "Label": {
-        "Primary": {
-          "value": "#222729",
-          "opacity": 1,
-          "description": "gray 900"
-        },
-        "Secondary": {
-          "value": "#5e696e",
-          "opacity": 1,
-          "description": "gray 600"
-        }
-      }
-    },
-    "Pattle": {
-      "Palette": {
-        "Common": {
-          "Black": {
-            "value": "#000000",
-            "opacity": 1
+    "primitive": {
+      "color": {
+        "alpha": {
+          "white": {
+            "4": {
+              "value": "#ffffff",
+              "opacity": 0.11999999731779099,
+              "description": "순수 검정"
+            },
+            "6": {
+              "value": "#ffffff",
+              "opacity": 0.05999999865889549,
+              "description": "순수 검정"
+            },
+            "8": {
+              "value": "#ffffff",
+              "opacity": 0.07999999821186066,
+              "description": "순수 검정"
+            },
+            "12": {
+              "value": "#ffffff",
+              "opacity": 0.11999999731779099,
+              "description": "순수 검정"
+            },
+            "16": {
+              "value": "#ffffff",
+              "opacity": 0.1599999964237213,
+              "description": "순수 검정"
+            },
+            "30": {
+              "value": "#ffffff",
+              "opacity": 0.30000001192092896,
+              "description": "순수 검정"
+            },
+            "46": {
+              "value": "#ffffff",
+              "opacity": 0.46000000834465027,
+              "description": "순수 검정"
+            },
+            "64": {
+              "value": "#ffffff",
+              "opacity": 0.6399999856948853,
+              "description": "순수 검정"
+            },
+            "82": {
+              "value": "#ffffff",
+              "opacity": 0.8199999928474426,
+              "description": "순수 검정"
+            }
           },
-          "White": {
-            "value": "#ffffff",
-            "opacity": 1
+          "black": {
+            "4": {
+              "value": "#000000",
+              "opacity": 0.03921568766236305
+            },
+            "6": {
+              "value": "#000000",
+              "opacity": 0.05882352963089943
+            },
+            "8": {
+              "value": "#000000",
+              "opacity": 0.0784313753247261
+            },
+            "12": {
+              "value": "#000000",
+              "opacity": 0.12156862765550613
+            },
+            "16": {
+              "value": "#000000",
+              "opacity": 0.16078431904315948
+            },
+            "30": {
+              "value": "#000000",
+              "opacity": 0.3019607961177826
+            },
+            "46": {
+              "value": "#000000",
+              "opacity": 0.4588235318660736
+            },
+            "64": {
+              "value": "#000000",
+              "opacity": 0.6392157077789307
+            },
+            "82": {
+              "value": "#000000",
+              "opacity": 0.8196078538894653
+            }
           }
         },
-        "Blue": {
-          "Blue 900": {
-            "value": "#0b3e91",
+        "blue": {
+          "50": {
+            "value": "#f6fbff",
             "opacity": 1
           },
-          "Blue 800": {
-            "value": "#075db4",
+          "100": {
+            "value": "#ebf6ff",
             "opacity": 1
           },
-          "Blue 700": {
-            "value": "#0779df",
-            "opacity": 1
-          },
-          "Blue 600": {
-            "value": "#0a93ff",
-            "opacity": 1
-          },
-          "Blue 500": {
-            "value": "#5bb7ff",
-            "opacity": 1
-          },
-          "Blue 400": {
-            "value": "#b4ddff",
-            "opacity": 1
-          },
-          "Blue 300": {
-            "value": "#d4ecff",
-            "opacity": 1
-          },
-          "Blue 200": {
+          "200": {
             "value": "#e2f2ff",
             "opacity": 1
           },
-          "Blue 100": {
-            "value": "#ecf6ff",
+          "300": {
+            "value": "#d4ecff",
             "opacity": 1
           },
-          "Blue 50": {
-            "value": "#f6fbff",
+          "400": {
+            "value": "#b3ddff",
+            "opacity": 1
+          },
+          "500": {
+            "value": "#5bb7ff",
+            "opacity": 1
+          },
+          "600": {
+            "value": "#0a93ff",
+            "opacity": 1,
+            "description": "Ride 브랜드 컬러 (Primary Normal)"
+          },
+          "700": {
+            "value": "#0679df",
+            "opacity": 1
+          },
+          "800": {
+            "value": "#065cb3",
+            "opacity": 1
+          },
+          "900": {
+            "value": "#0b3e91",
             "opacity": 1
           }
         },
-        "Gray": {
-          "Gray 900": {
-            "value": "#222729",
+        "common": {
+          "black": {
+            "value": "#000000",
+            "opacity": 1,
+            "description": "순수 검정"
+          },
+          "white": {
+            "value": "#ffffff",
+            "opacity": 1,
+            "description": "순수 흰색"
+          }
+        },
+        "external": {
+          "apple": {
+            "value": "#000000",
+            "opacity": 1,
+            "description": "애플 브랜드 컬러"
+          },
+          "google": {
+            "value": "#f2f2f2",
+            "opacity": 1,
+            "description": "구글 브랜드 컬러"
+          },
+          "kakao": {
+            "value": "#fee500",
+            "opacity": 1,
+            "description": "카카오 브랜드 컬러"
+          },
+          "naver": {
+            "value": "#03cf5d",
+            "opacity": 1,
+            "description": "네이버 브랜드 컬러"
+          }
+        },
+        "gray": {
+          "50": {
+            "value": "#f7f9fa",
             "opacity": 1
           },
-          "Gray 800": {
-            "value": "#353c3f",
-            "opacity": 1
-          },
-          "Gray 700": {
-            "value": "#4a5256",
-            "opacity": 1
-          },
-          "Gray 600": {
-            "value": "#5e696e",
-            "opacity": 1
-          },
-          "Gray 500": {
-            "value": "#6e777c",
-            "opacity": 1
-          },
-          "Gray 400": {
-            "value": "#aeb7bc",
-            "opacity": 1
-          },
-          "Gray 300": {
-            "value": "#cfd6d9",
-            "opacity": 1
-          },
-          "Gray 200": {
-            "value": "#e7edf0",
-            "opacity": 1
-          },
-          "Gray 100": {
+          "100": {
             "value": "#f1f4f6",
             "opacity": 1
           },
-          "Gray 50": {
-            "value": "#f7f9fa",
+          "200": {
+            "value": "#e7edf0",
+            "opacity": 1
+          },
+          "300": {
+            "value": "#cfd5d9",
+            "opacity": 1
+          },
+          "400": {
+            "value": "#aeb7bc",
+            "opacity": 1
+          },
+          "500": {
+            "value": "#6e777c",
+            "opacity": 1,
+            "description": "중간 회색"
+          },
+          "600": {
+            "value": "#5e686e",
+            "opacity": 1
+          },
+          "700": {
+            "value": "#4a5256",
+            "opacity": 1
+          },
+          "800": {
+            "value": "#353b3f",
+            "opacity": 1
+          },
+          "900": {
+            "value": "#222629",
             "opacity": 1
           }
         },
-        "Red": {
-          "Red 900": {
-            "value": "#792523",
+        "green": {
+          "50": {
+            "value": "#eaf9ee",
             "opacity": 1
           },
-          "Red 800": {
-            "value": "#9f3433",
-            "opacity": 1
-          },
-          "Red 700": {
-            "value": "#c54343",
-            "opacity": 1
-          },
-          "Red 600": {
-            "value": "#d64c4c",
-            "opacity": 1
-          },
-          "Red 500": {
-            "value": "#da5b5b",
-            "opacity": 1
-          },
-          "Red 400": {
-            "value": "#de6969",
-            "opacity": 1
-          },
-          "Red 300": {
-            "value": "#e68686",
-            "opacity": 1
-          },
-          "Red 200": {
-            "value": "#f2b2b2",
-            "opacity": 1
-          },
-          "Red 100": {
-            "value": "#fad8d8",
-            "opacity": 1
-          },
-          "Red 50": {
-            "value": "#ffefef",
-            "opacity": 1
-          }
-        },
-        "Yellow": {
-          "Yellow 900": {
-            "value": "#e4a400",
-            "opacity": 1
-          },
-          "Yellow 800": {
-            "value": "#fbb500",
-            "opacity": 1
-          },
-          "Yellow 700": {
-            "value": "#fdc100",
-            "opacity": 1
-          },
-          "Yellow 600": {
-            "value": "#ffcc00",
-            "opacity": 1
-          },
-          "Yellow 500": {
-            "value": "#ffd633",
-            "opacity": 1
-          },
-          "Yellow 400": {
-            "value": "#ffe066",
-            "opacity": 1
-          },
-          "Yellow 300": {
-            "value": "#ffe88d",
-            "opacity": 1
-          },
-          "Yellow 200": {
-            "value": "#fff0b3",
-            "opacity": 1
-          },
-          "Yellow 100": {
-            "value": "#fff4c6",
-            "opacity": 1
-          },
-          "Yellow 50": {
-            "value": "#fff7d9",
-            "opacity": 1
-          }
-        },
-        "Green": {
-          "Green 900": {
-            "value": "#018827",
-            "opacity": 1
-          },
-          "Green 800": {
-            "value": "#0a9a32",
-            "opacity": 1
-          },
-          "Green 700": {
-            "value": "#10ac4c",
-            "opacity": 1
-          },
-          "Green 600": {
-            "value": "#15bd66",
-            "opacity": 1
-          },
-          "Green 500": {
-            "value": "#41ca80",
-            "opacity": 1
-          },
-          "Green 400": {
-            "value": "#6cd69a",
-            "opacity": 1
-          },
-          "Green 300": {
-            "value": "#97e2b4",
-            "opacity": 1
-          },
-          "Green 200": {
-            "value": "#c2eece",
-            "opacity": 1
-          },
-          "Green 100": {
+          "100": {
             "value": "#d7f4df",
             "opacity": 1
           },
-          "Green 50": {
-            "value": "#ebfaef",
+          "200": {
+            "value": "#c2eece",
+            "opacity": 1
+          },
+          "300": {
+            "value": "#97e2b4",
+            "opacity": 1
+          },
+          "400": {
+            "value": "#6cd69a",
+            "opacity": 1
+          },
+          "500": {
+            "value": "#41ca80",
+            "opacity": 1
+          },
+          "600": {
+            "value": "#15bd66",
+            "opacity": 1,
+            "description": "Ride success 컬러"
+          },
+          "700": {
+            "value": "#10ac4c",
+            "opacity": 1
+          },
+          "800": {
+            "value": "#099a32",
+            "opacity": 1
+          },
+          "900": {
+            "value": "#018827",
             "opacity": 1
           }
         },
-        "Oxford": {
-          "Oxford 900": {
-            "value": "#030319",
+        "oxford": {
+          "50": {
+            "value": "#dadaee",
             "opacity": 1
           },
-          "Oxford 800": {
-            "value": "#0c0c30",
-            "opacity": 1
-          },
-          "Oxford 700": {
-            "value": "#202042",
-            "opacity": 1
-          },
-          "Oxford 600": {
-            "value": "#333354",
-            "opacity": 1
-          },
-          "Oxford 500": {
-            "value": "#474766",
-            "opacity": 1
-          },
-          "Oxford 400": {
-            "value": "#5a5a78",
-            "opacity": 1
-          },
-          "Oxford 300": {
-            "value": "#73738f",
-            "opacity": 1
-          },
-          "Oxford 200": {
-            "value": "#a7a7bf",
-            "opacity": 1
-          },
-          "Oxford 100": {
+          "100": {
             "value": "#c1c1d7",
             "opacity": 1
           },
-          "Oxford 50": {
-            "value": "#dadaee",
+          "200": {
+            "value": "#a7a7bf",
+            "opacity": 1
+          },
+          "300": {
+            "value": "#73738f",
+            "opacity": 1
+          },
+          "400": {
+            "value": "#5a5a78",
+            "opacity": 1
+          },
+          "500": {
+            "value": "#474766",
+            "opacity": 1
+          },
+          "600": {
+            "value": "#333354",
+            "opacity": 1,
+            "description": "Ride oxford 보조 컬러"
+          },
+          "700": {
+            "value": "#202042",
+            "opacity": 1
+          },
+          "800": {
+            "value": "#0c0c30",
+            "opacity": 1
+          },
+          "900": {
+            "value": "#030319",
             "opacity": 1
           }
         },
-        "KGM Astral Aura": {
-          "Purple 50": {
-            "value": "#e8e7ff",
+        "red": {
+          "50": {
+            "value": "#ffefef",
             "opacity": 1
           },
-          "Purple 100": {
-            "value": "#dddcf4",
+          "100": {
+            "value": "#fad8d8",
             "opacity": 1
           },
-          "Purple 200": {
-            "value": "#d1d0e9",
+          "200": {
+            "value": "#f2b2b2",
             "opacity": 1
           },
-          "Purple 300": {
-            "value": "#bab9d2",
+          "300": {
+            "value": "#e68686",
             "opacity": 1
           },
-          "Purple 400": {
-            "value": "#8b8aa5",
+          "400": {
+            "value": "#de6969",
             "opacity": 1
           },
-          "Purple 500": {
-            "value": "#5d5b78",
+          "500": {
+            "value": "#da5b5b",
             "opacity": 1
           },
-          "Purple 600": {
-            "value": "#2e2c4b",
+          "600": {
+            "value": "#d64c4c",
+            "opacity": 1,
+            "description": "Ride critical 컬러"
+          },
+          "700": {
+            "value": "#c54343",
             "opacity": 1
           },
-          "Purple 700": {
-            "value": "#272541",
+          "800": {
+            "value": "#9f3433",
             "opacity": 1
           },
-          "Purple 800": {
-            "value": "#1f1e36",
-            "opacity": 1
-          },
-          "Purple 900": {
-            "value": "#100f21",
+          "900": {
+            "value": "#792523",
             "opacity": 1
           }
         },
-        "KGM Gold": {
-          "Gold 50": {
-            "value": "#f7e9c9",
+        "yellow": {
+          "50": {
+            "value": "#fff7d8",
             "opacity": 1
           },
-          "Gold 100": {
-            "value": "#e8d6af",
+          "100": {
+            "value": "#fff4c6",
             "opacity": 1
           },
-          "Gold 200": {
-            "value": "#e0cda2",
+          "200": {
+            "value": "#ffefb2",
             "opacity": 1
           },
-          "Gold 300": {
-            "value": "#d8c394",
+          "300": {
+            "value": "#ffe88d",
             "opacity": 1
           },
-          "Gold 400": {
-            "value": "#d0ba87",
+          "400": {
+            "value": "#ffe065",
             "opacity": 1
           },
-          "Gold 500": {
-            "value": "#cab27a",
+          "500": {
+            "value": "#ffd633",
             "opacity": 1
           },
-          "Gold 600": {
-            "value": "#c4a96c",
+          "600": {
+            "value": "#ffcc00",
+            "opacity": 1,
+            "description": "Ride warning 컬러"
+          },
+          "700": {
+            "value": "#fdc100",
             "opacity": 1
           },
-          "Gold 700": {
-            "value": "#b89d5e",
+          "800": {
+            "value": "#fab400",
             "opacity": 1
           },
-          "Gold 800": {
-            "value": "#ac9050",
+          "900": {
+            "value": "#e4a400",
+            "opacity": 1
+          }
+        }
+      }
+    },
+    "semantic": {
+      "color": {
+        "bg": {
+          "brand-inverted": {
+            "value": "#ffffff",
             "opacity": 1
           },
-          "Gold 900": {
-            "value": "#9b7f40",
+          "brand-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-weak-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "layer-basement": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "layer-default": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "layer-floating": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-inverted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          }
+        },
+        "fg": {
+          "brand-contrast": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-contrast": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-contrast": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-inverted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-subtle": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-contrast": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-contrast": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-contrast": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          }
+        },
+        "overlay": {
+          "scrim": {
+            "default": {
+              "value": "#ffffff",
+              "opacity": 1
+            },
+            "strong": {
+              "value": "#ffffff",
+              "opacity": 1
+            }
+          }
+        },
+        "stroke": {
+          "brand-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "brand-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "critical-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "informative-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-muted": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "neutral-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "oxford-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "positive-weak": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-solid": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-solid-pressed": {
+            "value": "#ffffff",
+            "opacity": 1
+          },
+          "warning-weak": {
+            "value": "#ffffff",
             "opacity": 1
           }
         }
       },
-      "Sementic": {
-        "Primary": {
-          "Normal": {
-            "value": "#0a93ff",
-            "opacity": 1,
-            "description": "blue 600"
-          },
-          "Strong": {
-            "value": "#0779df",
-            "opacity": 1,
-            "description": "blue 700"
-          },
-          "Heavy": {
-            "value": "#075db4",
-            "opacity": 1,
-            "description": "blue 800"
-          }
+      "skeleton": {
+        "bg": {
+          "value": "#ffffff",
+          "opacity": 1
         },
-        "Background": {
-          "Primary": {
-            "value": "#ffffff",
-            "opacity": 1,
-            "description": "white"
-          },
-          "Secondary": {
-            "value": "#f1f4f6",
-            "opacity": 1,
-            "description": "gray 100"
-          },
-          "Tertiary": {
-            "value": "#e7edf0",
-            "opacity": 1,
-            "description": "gray 200"
-          }
-        },
-        "Label": {
-          "Primary": {
-            "value": "#222729",
-            "opacity": 1,
-            "description": "gray 900"
-          },
-          "Secondary": {
-            "value": "#5e696e",
-            "opacity": 1,
-            "description": "gray 600"
-          }
-        },
-        "Social": {
-          "Kakao": {
-            "value": "#fee500",
-            "opacity": 1
-          },
-          "Naver": {
-            "value": "#03cf5d",
-            "opacity": 1
-          },
-          "Apple": {
-            "value": "#000000",
-            "opacity": 1
-          },
-          "Google": {
-            "value": "#f2f2f2",
-            "opacity": 1
-          }
+        "shimmer": {
+          "value": "#ffffff",
+          "opacity": 1
         }
       }
     }
   },
   "typography": {
-    "Display": {
-      "D1B-48": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 48,
-        "fontWeight": 700,
-        "lineHeight": 68,
-        "letterSpacing": -0.20000000298023224
+    "typography": {
+      "display": {
+        "d1": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Bold",
+          "fontSize": 48,
+          "fontWeight": 700,
+          "lineHeight": 68,
+          "letterSpacing": -0.20000000298023224,
+          "description": "Display - 48px, Bold"
+        },
+        "d2": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Bold",
+          "fontSize": 40,
+          "fontWeight": 700,
+          "lineHeight": 56,
+          "letterSpacing": "0%",
+          "description": "Display - 40px, Bold"
+        },
+        "d3": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Bold",
+          "fontSize": 36,
+          "fontWeight": 700,
+          "lineHeight": 50,
+          "letterSpacing": "0%",
+          "description": "Display - 36px, Bold"
+        },
+        "d4": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Bold",
+          "fontSize": 32,
+          "fontWeight": 700,
+          "lineHeight": 44,
+          "letterSpacing": "0%",
+          "description": "Display - 32px, Bold"
+        },
+        "d5": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Bold",
+          "fontSize": 28,
+          "fontWeight": 700,
+          "lineHeight": 40,
+          "letterSpacing": "0%",
+          "description": "Display - 28px, Bold"
+        },
+        "d6": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Bold",
+          "fontSize": 24,
+          "fontWeight": 700,
+          "lineHeight": 38,
+          "letterSpacing": "0%",
+          "description": "Display - 24px, Bold"
+        }
       },
-      "D2B-40": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 40,
-        "fontWeight": 700,
-        "lineHeight": 56,
-        "letterSpacing": 0
+      "header": {
+        "h1": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 26,
+            "fontWeight": 700,
+            "lineHeight": 38,
+            "letterSpacing": "0%",
+            "description": "Header - 26px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 26,
+            "fontWeight": 600,
+            "lineHeight": 38,
+            "letterSpacing": "0%",
+            "description": "Header - 26px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 26,
+            "fontWeight": 500,
+            "lineHeight": 38,
+            "letterSpacing": "0%",
+            "description": "Header - 26px, Medium"
+          }
+        },
+        "h2": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 24,
+            "fontWeight": 700,
+            "lineHeight": 36,
+            "letterSpacing": "0%",
+            "description": "Header - 24px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 24,
+            "fontWeight": 600,
+            "lineHeight": 36,
+            "letterSpacing": "0%",
+            "description": "Header - 24px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 24,
+            "fontWeight": 500,
+            "lineHeight": 36,
+            "letterSpacing": "0%",
+            "description": "Header - 24px, Medium"
+          }
+        },
+        "h3": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 22,
+            "fontWeight": 700,
+            "lineHeight": 34,
+            "letterSpacing": "0%",
+            "description": "Header - 22px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 22,
+            "fontWeight": 600,
+            "lineHeight": 34,
+            "letterSpacing": "0%",
+            "description": "Header - 22px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 22,
+            "fontWeight": 500,
+            "lineHeight": 34,
+            "letterSpacing": "0%",
+            "description": "Header - 22px, Medium"
+          }
+        },
+        "h4": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 20,
+            "fontWeight": 700,
+            "lineHeight": 30,
+            "letterSpacing": "0%",
+            "description": "Header - 20px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 20,
+            "fontWeight": 600,
+            "lineHeight": 30,
+            "letterSpacing": "0%",
+            "description": "Header - 20px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 20,
+            "fontWeight": 500,
+            "lineHeight": 30,
+            "letterSpacing": "0%",
+            "description": "Header - 20px, Medium"
+          }
+        },
+        "h5": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 19,
+            "fontWeight": 700,
+            "lineHeight": 26,
+            "letterSpacing": "0%",
+            "description": "Header - 19px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 19,
+            "fontWeight": 600,
+            "lineHeight": 26,
+            "letterSpacing": "0%",
+            "description": "Header - 19px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 19,
+            "fontWeight": 500,
+            "lineHeight": 26,
+            "letterSpacing": "0%",
+            "description": "Header - 19px, Medium"
+          }
+        },
+        "h6": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 17,
+            "fontWeight": 700,
+            "lineHeight": 24,
+            "letterSpacing": "0%",
+            "description": "Header - 17px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 17,
+            "fontWeight": 600,
+            "lineHeight": 24,
+            "letterSpacing": "0%",
+            "description": "Header - 17px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 17,
+            "fontWeight": 500,
+            "lineHeight": 24,
+            "letterSpacing": "0%",
+            "description": "Header - 17px, Medium"
+          }
+        },
+        "h7": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 16,
+            "fontWeight": 700,
+            "lineHeight": 24,
+            "letterSpacing": "0%",
+            "description": "Header - 16px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "lineHeight": 24,
+            "letterSpacing": "0%",
+            "description": "Header - 16px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 16,
+            "fontWeight": 500,
+            "lineHeight": 24,
+            "letterSpacing": "0%",
+            "description": "Header - 16px, Medium"
+          }
+        },
+        "h8": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 15,
+            "fontWeight": 700,
+            "lineHeight": 20,
+            "letterSpacing": "0%",
+            "description": "Header - 15px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 15,
+            "fontWeight": 600,
+            "lineHeight": 20,
+            "letterSpacing": "0%",
+            "description": "Header - 15px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeight": 20,
+            "letterSpacing": "0%",
+            "description": "Header - 15px, Medium"
+          }
+        },
+        "h9": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 14,
+            "fontWeight": 700,
+            "lineHeight": 18,
+            "letterSpacing": "0%",
+            "description": "Header - 14px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 14,
+            "fontWeight": 600,
+            "lineHeight": 18,
+            "letterSpacing": "0%",
+            "description": "Header - 14px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 14,
+            "fontWeight": 500,
+            "lineHeight": 18,
+            "letterSpacing": "0%",
+            "description": "Header - 14px, Medium"
+          }
+        },
+        "h10": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 13,
+            "fontWeight": 700,
+            "lineHeight": 18,
+            "letterSpacing": "0%",
+            "description": "Header - 13px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 13,
+            "fontWeight": 600,
+            "lineHeight": 18,
+            "letterSpacing": "0%",
+            "description": "Header - 13px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 13,
+            "fontWeight": 500,
+            "lineHeight": 18,
+            "letterSpacing": "0%",
+            "description": "Header - 13px, Medium"
+          }
+        },
+        "h11": {
+          "bold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Bold",
+            "fontSize": 11,
+            "fontWeight": 700,
+            "lineHeight": 16,
+            "letterSpacing": "0%",
+            "description": "Header - 11px, Bold"
+          },
+          "semibold": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "SemiBold",
+            "fontSize": 11,
+            "fontWeight": 600,
+            "lineHeight": 16,
+            "letterSpacing": "0%",
+            "description": "Header - 11px, SemiBold"
+          },
+          "medium": {
+            "fontFamily": "Pretendard",
+            "fontStyle": "Medium",
+            "fontSize": 11,
+            "fontWeight": 500,
+            "lineHeight": 16,
+            "letterSpacing": "0%",
+            "description": "Header - 11px, Medium"
+          }
+        }
       },
-      "D3B-36": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 36,
-        "fontWeight": 700,
-        "lineHeight": 50,
-        "letterSpacing": 0
+      "body": {
+        "b1": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 24,
+          "fontWeight": 400,
+          "lineHeight": 38,
+          "letterSpacing": "0%",
+          "description": "Body - 24px, Regular"
+        },
+        "b2": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 24,
+          "fontWeight": 400,
+          "lineHeight": 36,
+          "letterSpacing": "0%",
+          "description": "Body - 24px, Regular"
+        },
+        "b3": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 22,
+          "fontWeight": 400,
+          "lineHeight": 34,
+          "letterSpacing": "0%",
+          "description": "Body - 22px, Regular"
+        },
+        "b4": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 20,
+          "fontWeight": 400,
+          "lineHeight": 30,
+          "letterSpacing": "0%",
+          "description": "Body - 20px, Regular"
+        },
+        "b5": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 19,
+          "fontWeight": 400,
+          "lineHeight": 26,
+          "letterSpacing": "0%",
+          "description": "Body - 19px, Regular"
+        },
+        "b6": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 17,
+          "fontWeight": 400,
+          "lineHeight": 24,
+          "letterSpacing": "0%",
+          "description": "Body - 17px, Regular"
+        },
+        "b7": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": 24,
+          "letterSpacing": "0%",
+          "description": "Body - 16px, Regular"
+        },
+        "b8": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 15,
+          "fontWeight": 400,
+          "lineHeight": 20,
+          "letterSpacing": "0%",
+          "description": "Body - 15px, Regular"
+        },
+        "b9": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": 18,
+          "letterSpacing": "0%",
+          "description": "Body - 14px, Regular"
+        },
+        "b10": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": 18,
+          "letterSpacing": "0%",
+          "description": "Body - 13px, Regular"
+        },
+        "b11": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": 16,
+          "letterSpacing": "0%",
+          "description": "Body - 11px, Regular"
+        }
       },
-      "D4B-32": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 32,
-        "fontWeight": 700,
-        "lineHeight": 44,
-        "letterSpacing": 0
+      "button": {
+        "b1": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 19,
+          "fontWeight": 500,
+          "lineHeight": 26,
+          "letterSpacing": "0%",
+          "description": "Button - 19px, Medium"
+        },
+        "b2": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 17,
+          "fontWeight": 500,
+          "lineHeight": 24,
+          "letterSpacing": "0%",
+          "description": "Button - 17px, Medium"
+        },
+        "b3": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 15,
+          "fontWeight": 500,
+          "lineHeight": 20,
+          "letterSpacing": "0%",
+          "description": "Button - 15px, Medium"
+        },
+        "b4": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 13,
+          "fontWeight": 500,
+          "lineHeight": 20,
+          "letterSpacing": "0%",
+          "description": "Button - 13px/20px, Medium"
+        },
+        "b5": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 11,
+          "fontWeight": 500,
+          "lineHeight": 16,
+          "letterSpacing": "0%",
+          "description": "Button - 11px, Medium"
+        }
       },
-      "D5B-28": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 28,
-        "fontWeight": 700,
-        "lineHeight": 40,
-        "letterSpacing": 0
+      "label": {
+        "l1": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 16,
+          "fontWeight": 500,
+          "lineHeight": 18,
+          "letterSpacing": "0%",
+          "description": "Label - 16px, Medium"
+        },
+        "l2": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 14,
+          "fontWeight": 500,
+          "lineHeight": 14,
+          "letterSpacing": "0%",
+          "description": "Label - 14px, Medium"
+        },
+        "l3": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 12,
+          "fontWeight": 500,
+          "lineHeight": 12,
+          "letterSpacing": "0%",
+          "description": "Label - 12px, Medium"
+        },
+        "l4": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Medium",
+          "fontSize": 10,
+          "fontWeight": 500,
+          "lineHeight": 10,
+          "letterSpacing": "0%",
+          "description": "Label - 10px, Medium"
+        }
       },
-      "D6B-24": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 24,
-        "fontWeight": 700,
-        "lineHeight": 38,
-        "letterSpacing": 0
-      }
-    },
-    "Header": {
-      "H1B-26": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 26,
-        "fontWeight": 700,
-        "lineHeight": 38,
-        "letterSpacing": 0
-      },
-      "H2B-24": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 24,
-        "fontWeight": 700,
-        "lineHeight": 36,
-        "letterSpacing": 0
-      },
-      "H3B-22": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 22,
-        "fontWeight": 700,
-        "lineHeight": 34,
-        "letterSpacing": 0
-      },
-      "H4B-20": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 20,
-        "fontWeight": 700,
-        "lineHeight": 30,
-        "letterSpacing": 0
-      },
-      "H5B-19": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 19,
-        "fontWeight": 700,
-        "lineHeight": 26,
-        "letterSpacing": 0
-      },
-      "H6B-17": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 17,
-        "fontWeight": 700,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "H7B-16": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 16,
-        "fontWeight": 700,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "H8B-15": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 15,
-        "fontWeight": 700,
-        "lineHeight": 20,
-        "letterSpacing": 0
-      },
-      "H9B-14": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 14,
-        "fontWeight": 700,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "H10B-13": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 13,
-        "fontWeight": 700,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "H11B-11": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Bold",
-        "fontSize": 11,
-        "fontWeight": 700,
-        "lineHeight": 16,
-        "letterSpacing": 0
-      },
-      "H1M-26": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 26,
-        "fontWeight": 500,
-        "lineHeight": 38,
-        "letterSpacing": 0
-      },
-      "H2M-24": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 24,
-        "fontWeight": 500,
-        "lineHeight": 36,
-        "letterSpacing": 0
-      },
-      "H3M-22": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 22,
-        "fontWeight": 500,
-        "lineHeight": 34,
-        "letterSpacing": 0
-      },
-      "H4M-20": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 20,
-        "fontWeight": 500,
-        "lineHeight": 30,
-        "letterSpacing": 0
-      },
-      "H5M-19": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 19,
-        "fontWeight": 500,
-        "lineHeight": 26,
-        "letterSpacing": 0
-      },
-      "H6M-17": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 17,
-        "fontWeight": 500,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "H7M-16": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 16,
-        "fontWeight": 500,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "H8M-15": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 15,
-        "fontWeight": 500,
-        "lineHeight": 20,
-        "letterSpacing": 0
-      },
-      "H9M-14": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 14,
-        "fontWeight": 500,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "H10M-13": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 13,
-        "fontWeight": 500,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "H11M-11": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 11,
-        "fontWeight": 500,
-        "lineHeight": 16,
-        "letterSpacing": 0
-      },
-      "H1SB-26": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 26,
-        "fontWeight": 600,
-        "lineHeight": 38,
-        "letterSpacing": 0
-      },
-      "H2SB-24": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 24,
-        "fontWeight": 600,
-        "lineHeight": 36,
-        "letterSpacing": 0
-      },
-      "H3SB-22": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 22,
-        "fontWeight": 600,
-        "lineHeight": 34,
-        "letterSpacing": 0
-      },
-      "H4SB-20": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 20,
-        "fontWeight": 600,
-        "lineHeight": 30,
-        "letterSpacing": 0
-      },
-      "H5SB-19": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 19,
-        "fontWeight": 600,
-        "lineHeight": 26,
-        "letterSpacing": 0
-      },
-      "H6SB-17": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 17,
-        "fontWeight": 600,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "H7SB-16": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 16,
-        "fontWeight": 600,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "H8SB-15": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 15,
-        "fontWeight": 600,
-        "lineHeight": 20,
-        "letterSpacing": 0
-      },
-      "H9SB-14": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 14,
-        "fontWeight": 600,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "H10SB-13": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 13,
-        "fontWeight": 600,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "H11SB-11": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "SemiBold",
-        "fontSize": 11,
-        "fontWeight": 600,
-        "lineHeight": 16,
-        "letterSpacing": 0
-      }
-    },
-    "Body": {
-      "B1R-26": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 24,
-        "fontWeight": 400,
-        "lineHeight": 38,
-        "letterSpacing": 0
-      },
-      "B2R-24": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 24,
-        "fontWeight": 400,
-        "lineHeight": 36,
-        "letterSpacing": 0
-      },
-      "B3R-22": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 22,
-        "fontWeight": 400,
-        "lineHeight": 34,
-        "letterSpacing": 0
-      },
-      "B4R-20": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 20,
-        "fontWeight": 400,
-        "lineHeight": 30,
-        "letterSpacing": 0
-      },
-      "B5R-19": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 19,
-        "fontWeight": 400,
-        "lineHeight": 26,
-        "letterSpacing": 0
-      },
-      "B6R-17": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 17,
-        "fontWeight": 400,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "B7R-16": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 16,
-        "fontWeight": 400,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "B8R-15": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 15,
-        "fontWeight": 400,
-        "lineHeight": 20,
-        "letterSpacing": 0
-      },
-      "B9R-14": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 14,
-        "fontWeight": 400,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "B10R-13": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 13,
-        "fontWeight": 400,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "B11R-11": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 11,
-        "fontWeight": 400,
-        "lineHeight": 16,
-        "letterSpacing": 0
-      }
-    },
-    "Button": {
-      "B1M-19": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 19,
-        "fontWeight": 500,
-        "lineHeight": 26,
-        "letterSpacing": 0
-      },
-      "B2M-17": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 17,
-        "fontWeight": 500,
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "B3M-15": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 15,
-        "fontWeight": 500,
-        "lineHeight": 20,
-        "letterSpacing": 0
-      },
-      "B4M-13": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 13,
-        "fontWeight": 500,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "B5M-11": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 11,
-        "fontWeight": 500,
-        "lineHeight": 16,
-        "letterSpacing": 0
-      }
-    },
-    "Label": {
-      "L1M-16": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 16,
-        "fontWeight": 500,
-        "lineHeight": 18,
-        "letterSpacing": 0
-      },
-      "L2M-14": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 14,
-        "fontWeight": 500,
-        "lineHeight": 14,
-        "letterSpacing": 0
-      },
-      "L3M-12": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 12,
-        "fontWeight": 500,
-        "lineHeight": 12,
-        "letterSpacing": 0
-      },
-      "L4M-10": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Medium",
-        "fontSize": 10,
-        "fontWeight": 500,
-        "lineHeight": 10,
-        "letterSpacing": 0
-      }
-    },
-    "Paragraph": {
-      "P1R-17": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 17,
-        "fontWeight": 400,
-        "lineHeight": 30,
-        "letterSpacing": -0.20000000298023224
-      },
-      "P2R-15": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 15,
-        "fontWeight": 400,
-        "lineHeight": 26,
-        "letterSpacing": -0.20000000298023224
-      },
-      "P3R-14": {
-        "fontFamily": "Pretendard",
-        "fontStyle": "Regular",
-        "fontSize": 14,
-        "fontWeight": 400,
-        "lineHeight": 22,
-        "letterSpacing": -0.20000000298023224
+      "paragraph": {
+        "p1": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 17,
+          "fontWeight": 400,
+          "lineHeight": 30,
+          "letterSpacing": -0.20000000298023224,
+          "description": "Paragraph - 17px, Regular"
+        },
+        "p2": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 15,
+          "fontWeight": 400,
+          "lineHeight": 26,
+          "letterSpacing": -0.20000000298023224,
+          "description": "Paragraph - 15px, Regular"
+        },
+        "p3": {
+          "fontFamily": "Pretendard",
+          "fontStyle": "Regular",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": 22,
+          "letterSpacing": -0.20000000298023224,
+          "description": "Paragraph - 14px, Regular"
+        }
       }
     }
   },
-  "effects": {
-    "Shadow_1DP": {
-      "effects": [
-        {
-          "type": "drop-shadow",
-          "color": "#353c3f",
-          "opacity": 0.03999999910593033,
-          "offsetX": 0,
-          "offsetY": 2,
-          "blur": 4,
-          "spread": 0
-        }
-      ]
-    },
-    "Shadow_2DP": {
-      "effects": [
-        {
-          "type": "drop-shadow",
-          "color": "#353c3f",
-          "opacity": 0.03999999910593033,
-          "offsetX": 0,
-          "offsetY": 2,
-          "blur": 16,
-          "spread": 0
-        }
-      ]
-    },
-    "Shadow_4DP": {
-      "effects": [
-        {
-          "type": "drop-shadow",
-          "color": "#353c3f",
-          "opacity": 0.07999999821186066,
-          "offsetX": 0,
-          "offsetY": 2,
-          "blur": 20,
-          "spread": 0
-        }
-      ]
-    },
-    "Shadow_8DP": {
-      "effects": [
-        {
-          "type": "drop-shadow",
-          "color": "#353c3f",
-          "opacity": 0.10000000149011612,
-          "offsetX": 0,
-          "offsetY": 4,
-          "blur": 32,
-          "spread": 0
-        }
-      ]
-    },
-    "Shadow_16DP": {
-      "effects": [
-        {
-          "type": "drop-shadow",
-          "color": "#353c3f",
-          "opacity": 0.1599999964237213,
-          "offsetX": 0,
-          "offsetY": 8,
-          "blur": 32,
-          "spread": 0
-        }
-      ]
-    }
-  },
+  "effects": {},
   "spacing": {}
 }
