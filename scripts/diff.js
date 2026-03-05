@@ -20,7 +20,11 @@ function flattenTokens(obj, prefix = '') {
   for (const [key, value] of Object.entries(obj)) {
     if (key.startsWith('$')) continue;
     const fullKey = prefix ? `${prefix}.${key}` : key;
-    if (value && typeof value === 'object' && '$value' in value) {
+    if (value && typeof value === 'object' && 'value' in value) {
+      // 새 형식: { value, opacity, description, ... }
+      result[fullKey] = value.value;
+    } else if (value && typeof value === 'object' && '$value' in value) {
+      // 구 형식: { $value, $type, ... }
       result[fullKey] = value.$value;
     } else if (value && typeof value === 'object') {
       Object.assign(result, flattenTokens(value, fullKey));
