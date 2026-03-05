@@ -1,7 +1,7 @@
 import { createTheme, style } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
-import { vars } from "@styles/theme.css";
+import { vars } from "../../styles/theme.css";
 import { buttonTheme } from "./buttonTheme.css";
 
 // Color themes

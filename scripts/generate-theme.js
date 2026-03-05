@@ -2,84 +2,77 @@
 /**
  * tokens.json → src/styles/theme.css.ts 자동 생성 스크립트
  *
- * Token Studio 포맷의 tokens.json을 읽어 Vanilla Extract 형식의
- * theme.css.ts 파일을 생성합니다.
+ * 플러그인이 생성하는 포맷 기준:
+ *   colors.color.XXX.YYY  → { value: "#hex", opacity? }
+ *   typography.typoType.XXX → { fontFamily, fontSize, fontWeight, lineHeight, letterSpacing }
  *
  * 사용법: node scripts/generate-theme.js
  */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const TOKENS_PATH = path.join(__dirname, "../tokens.json");
-const OUTPUT_PATH = path.join(__dirname, "../src/styles/theme.css.ts");
+const TOKENS_PATH = path.join(__dirname, '../tokens.json');
+const OUTPUT_PATH = path.join(__dirname, '../src/styles/theme.css.ts');
 
-const tokens = JSON.parse(fs.readFileSync(TOKENS_PATH, "utf-8"));
-const tokenSetOrder = tokens.$metadata?.tokenSetOrder ?? [];
+const tokens = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf-8'));
 
-// 토큰 셋을 { "경로": 값 } 형태로 평탄화
-function flattenSet(obj, prefix = "") {
+// ─── 리프 판별 ────────────────────────────────────────────────────────────────
+function isColorLeaf(obj) {
+  return obj && typeof obj === 'object' && typeof obj.value === 'string';
+}
+function isTypoLeaf(obj) {
+  return obj && typeof obj === 'object' && 'fontFamily' in obj;
+}
+
+// ─── 평탄화 ───────────────────────────────────────────────────────────────────
+function flattenColors(obj, prefix = '') {
   const result = {};
-  for (const [key, value] of Object.entries(obj)) {
-    if (key.startsWith("$")) continue;
+  if (!obj || typeof obj !== 'object') return result;
+  if (isColorLeaf(obj)) {
+    result[prefix] = obj.value;
+    return result;
+  }
+  for (const [key, val] of Object.entries(obj)) {
     const p = prefix ? `${prefix}.${key}` : key;
-    if (value && typeof value === "object" && "$value" in value) {
-      result[p] = value.$value;
-    } else if (value && typeof value === "object") {
-      Object.assign(result, flattenSet(value, p));
-    }
+    Object.assign(result, flattenColors(val, p));
   }
   return result;
 }
 
-// tokenSetOrder 순서대로 모든 셋을 병합 (뒤 셋이 앞 셋을 덮어씀)
-const flatMap = {};
-for (const setName of tokenSetOrder) {
-  if (tokens[setName]) {
-    Object.assign(flatMap, flattenSet(tokens[setName]));
+function flattenTypo(obj, prefix = '') {
+  const result = {};
+  if (!obj || typeof obj !== 'object') return result;
+  if (isTypoLeaf(obj)) {
+    result[prefix] = obj;
+    return result;
   }
+  for (const [key, val] of Object.entries(obj)) {
+    const p = prefix ? `${prefix}.${key}` : key;
+    Object.assign(result, flattenTypo(val, p));
+  }
+  return result;
 }
 
-// {some.path} 형태의 참조를 실제 값으로 재귀 해석
-function resolve(value, depth = 0) {
-  if (depth > 10 || typeof value !== "string") return value;
+// tokens.colors, tokens.typography 기준으로 맵 생성
+// → getColor('color.primary.default'), getTypo('typoType.button2') 형태로 접근
+const colorMap = flattenColors(tokens.colors);
+const typoMap  = flattenTypo(tokens.typography);
 
-  const pureRef = value.match(/^\{([^}]+)\}$/);
-  if (pureRef) {
-    const resolved = flatMap[pureRef[1]];
-    if (resolved === undefined) {
-      throw new Error(`참조를 찾을 수 없습니다: ${pureRef[1]}`);
-    }
-    return resolve(resolved, depth + 1);
-  }
-
-  return value.replace(/\{([^}]+)\}/g, (_, ref) => {
-    const resolved = flatMap[ref];
-    return resolved !== undefined ? resolve(String(resolved), depth + 1) : _;
-  });
-}
-
-// 색상 토큰 값 가져오기
+// ─── 토큰 조회 ────────────────────────────────────────────────────────────────
 function getColor(tokenPath) {
-  const value = flatMap[tokenPath];
-  if (value === undefined)
-    throw new Error(`색상 토큰을 찾을 수 없습니다: ${tokenPath}`);
-  return resolve(String(value));
+  const value = colorMap[tokenPath];
+  if (value === undefined) throw new Error(`색상 토큰을 찾을 수 없습니다: ${tokenPath}`);
+  return value;
 }
 
-// 타이포그래피 복합 토큰 가져오기 (객체 → 각 속성 해석)
 function getTypo(tokenPath) {
-  const value = flatMap[tokenPath];
-  if (value === undefined)
-    throw new Error(`타이포그래피 토큰을 찾을 수 없습니다: ${tokenPath}`);
-  if (typeof value !== "object")
-    throw new Error(`${tokenPath}는 복합 토큰이 아닙니다`);
-  return Object.fromEntries(
-    Object.entries(value).map(([k, v]) => [k, resolve(String(v))])
-  );
+  const value = typoMap[tokenPath];
+  if (value === undefined) throw new Error(`타이포그래피 토큰을 찾을 수 없습니다: ${tokenPath}`);
+  return value;
 }
 
-// 색상 그룹 블록 생성
+// ─── 블록 생성 ────────────────────────────────────────────────────────────────
 function colorBlock(name) {
   const p = `color.${name}`;
   return `    ${name}: {
@@ -91,35 +84,36 @@ function colorBlock(name) {
     },`;
 }
 
-// 타이포그래피 블록 생성
 function typoBlock(name) {
   const t = getTypo(`typoType.${name}`);
   return `    ${name}: {
-      fontSize:      '${t.fontSize}',
+      fontSize:      '${t.fontSize}px',
       fontWeight:    '${t.fontWeight}',
       lineHeight:    '${t.lineHeight}',
       letterSpacing: '${t.letterSpacing}',
     },`;
 }
 
+// ─── 파일 생성 ────────────────────────────────────────────────────────────────
 const output = `import { createGlobalTheme } from '@vanilla-extract/css';
 
 // 이 파일은 scripts/generate-theme.js로 자동 생성됩니다.
-// 직접 수정하지 말고 tokens.json을 수정한 뒤 npm run tokens:generate 를 실행하세요.
+// 직접 수정하지 말고 tokens.json을 수정한 뒤
+// npm run tokens:generate 를 실행하세요.
 
 export const vars = createGlobalTheme(':root', {
   typoType: {
-${typoBlock("button2")}
-${typoBlock("button3")}
-${typoBlock("button4")}
-${typoBlock("button5")}
+${typoBlock('button2')}
+${typoBlock('button3')}
+${typoBlock('button4')}
+${typoBlock('button5')}
   },
   color: {
-${colorBlock("primary")}
-${colorBlock("gray")}
-${colorBlock("red")}
-${colorBlock("yellow")}
-${colorBlock("green")}
+${colorBlock('primary')}
+${colorBlock('gray')}
+${colorBlock('red')}
+${colorBlock('yellow')}
+${colorBlock('green')}
   },
 });
 `;
