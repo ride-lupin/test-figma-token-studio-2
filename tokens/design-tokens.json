@@ -1,0 +1,1310 @@
+{
+  "colors": {
+    "Palette": {
+      "Common": {
+        "Black": {
+          "value": "#000000",
+          "opacity": 1
+        },
+        "White": {
+          "value": "#ffffff",
+          "opacity": 1
+        }
+      },
+      "Blue": {
+        "Blue 900": {
+          "value": "#0b3e91",
+          "opacity": 1
+        },
+        "Blue 800": {
+          "value": "#075db4",
+          "opacity": 1
+        },
+        "Blue 700": {
+          "value": "#0779df",
+          "opacity": 1
+        },
+        "Blue 600": {
+          "value": "#0a93ff",
+          "opacity": 1
+        },
+        "Blue 500": {
+          "value": "#5bb7ff",
+          "opacity": 1
+        },
+        "Blue 400": {
+          "value": "#b4ddff",
+          "opacity": 1
+        },
+        "Blue 300": {
+          "value": "#d4ecff",
+          "opacity": 1
+        },
+        "Blue 200": {
+          "value": "#e2f2ff",
+          "opacity": 1
+        },
+        "Blue 100": {
+          "value": "#ecf6ff",
+          "opacity": 1
+        },
+        "Blue 50": {
+          "value": "#f6fbff",
+          "opacity": 1
+        }
+      },
+      "Gray": {
+        "Gray 900": {
+          "value": "#222729",
+          "opacity": 1
+        },
+        "Gray 800": {
+          "value": "#353c3f",
+          "opacity": 1
+        },
+        "Gray 700": {
+          "value": "#4a5256",
+          "opacity": 1
+        },
+        "Gray 600": {
+          "value": "#5e696e",
+          "opacity": 1
+        },
+        "Gray 500": {
+          "value": "#6e777c",
+          "opacity": 1
+        },
+        "Gray 400": {
+          "value": "#aeb7bc",
+          "opacity": 1
+        },
+        "Gray 300": {
+          "value": "#cfd6d9",
+          "opacity": 1
+        },
+        "Gray 200": {
+          "value": "#e7edf0",
+          "opacity": 1
+        },
+        "Gray 100": {
+          "value": "#f1f4f6",
+          "opacity": 1
+        },
+        "Gray 50": {
+          "value": "#f7f9fa",
+          "opacity": 1
+        }
+      },
+      "Red": {
+        "Red 900": {
+          "value": "#792523",
+          "opacity": 1
+        },
+        "Red 800": {
+          "value": "#9f3433",
+          "opacity": 1
+        },
+        "Red 700": {
+          "value": "#c54343",
+          "opacity": 1
+        },
+        "Red 600": {
+          "value": "#d64c4c",
+          "opacity": 1
+        },
+        "Red 500": {
+          "value": "#da5b5b",
+          "opacity": 1
+        },
+        "Red 400": {
+          "value": "#de6969",
+          "opacity": 1
+        },
+        "Red 300": {
+          "value": "#e68686",
+          "opacity": 1
+        },
+        "Red 200": {
+          "value": "#f2b2b2",
+          "opacity": 1
+        },
+        "Red 100": {
+          "value": "#fad8d8",
+          "opacity": 1
+        },
+        "Red 50": {
+          "value": "#ffefef",
+          "opacity": 1
+        }
+      },
+      "Yellow": {
+        "Yellow 900": {
+          "value": "#e4a400",
+          "opacity": 1
+        },
+        "Yellow 800": {
+          "value": "#fbb500",
+          "opacity": 1
+        },
+        "Yellow 700": {
+          "value": "#fdc100",
+          "opacity": 1
+        },
+        "Yellow 600": {
+          "value": "#ffcc00",
+          "opacity": 1
+        },
+        "Yellow 500": {
+          "value": "#ffd633",
+          "opacity": 1
+        },
+        "Yellow 400": {
+          "value": "#ffe066",
+          "opacity": 1
+        },
+        "Yellow 300": {
+          "value": "#ffe88d",
+          "opacity": 1
+        },
+        "Yellow 200": {
+          "value": "#fff0b3",
+          "opacity": 1
+        },
+        "Yellow 100": {
+          "value": "#fff4c6",
+          "opacity": 1
+        },
+        "Yellow 50": {
+          "value": "#fff7d9",
+          "opacity": 1
+        }
+      },
+      "Green": {
+        "Green 900": {
+          "value": "#018827",
+          "opacity": 1
+        },
+        "Green 800": {
+          "value": "#0a9a32",
+          "opacity": 1
+        },
+        "Green 700": {
+          "value": "#10ac4c",
+          "opacity": 1
+        },
+        "Green 600": {
+          "value": "#15bd66",
+          "opacity": 1
+        },
+        "Green 500": {
+          "value": "#41ca80",
+          "opacity": 1
+        },
+        "Green 400": {
+          "value": "#6cd69a",
+          "opacity": 1
+        },
+        "Green 300": {
+          "value": "#97e2b4",
+          "opacity": 1
+        },
+        "Green 200": {
+          "value": "#c2eece",
+          "opacity": 1
+        },
+        "Green 100": {
+          "value": "#d7f4df",
+          "opacity": 1
+        },
+        "Green 50": {
+          "value": "#ebfaef",
+          "opacity": 1
+        }
+      },
+      "Oxford": {
+        "Oxford 900": {
+          "value": "#030319",
+          "opacity": 1
+        },
+        "Oxford 800": {
+          "value": "#0c0c30",
+          "opacity": 1
+        },
+        "Oxford 700": {
+          "value": "#202042",
+          "opacity": 1
+        },
+        "Oxford 600": {
+          "value": "#333354",
+          "opacity": 1
+        },
+        "Oxford 500": {
+          "value": "#474766",
+          "opacity": 1
+        },
+        "Oxford 400": {
+          "value": "#5a5a78",
+          "opacity": 1
+        },
+        "Oxford 300": {
+          "value": "#73738f",
+          "opacity": 1
+        },
+        "Oxford 200": {
+          "value": "#a7a7bf",
+          "opacity": 1
+        },
+        "Oxford 100": {
+          "value": "#c1c1d7",
+          "opacity": 1
+        },
+        "Oxford 50": {
+          "value": "#dadaee",
+          "opacity": 1
+        }
+      }
+    },
+    "Sementic": {
+      "Primary": {
+        "Normal": {
+          "value": "#0a93ff",
+          "opacity": 1,
+          "description": "blue 600"
+        },
+        "Strong": {
+          "value": "#0779df",
+          "opacity": 1,
+          "description": "blue 700"
+        },
+        "Heavy": {
+          "value": "#075db4",
+          "opacity": 1,
+          "description": "blue 800"
+        }
+      },
+      "Background": {
+        "Primary": {
+          "value": "#ffffff",
+          "opacity": 1,
+          "description": "white"
+        },
+        "Secondary": {
+          "value": "#f1f4f6",
+          "opacity": 1,
+          "description": "gray 100"
+        },
+        "Tertiary": {
+          "value": "#e7edf0",
+          "opacity": 1,
+          "description": "gray 200"
+        }
+      },
+      "Label": {
+        "Primary": {
+          "value": "#222729",
+          "opacity": 1,
+          "description": "gray 900"
+        },
+        "Secondary": {
+          "value": "#5e696e",
+          "opacity": 1,
+          "description": "gray 600"
+        }
+      }
+    },
+    "Pattle": {
+      "Palette": {
+        "Common": {
+          "Black": {
+            "value": "#000000",
+            "opacity": 1
+          },
+          "White": {
+            "value": "#ffffff",
+            "opacity": 1
+          }
+        },
+        "Blue": {
+          "Blue 900": {
+            "value": "#0b3e91",
+            "opacity": 1
+          },
+          "Blue 800": {
+            "value": "#075db4",
+            "opacity": 1
+          },
+          "Blue 700": {
+            "value": "#0779df",
+            "opacity": 1
+          },
+          "Blue 600": {
+            "value": "#0a93ff",
+            "opacity": 1
+          },
+          "Blue 500": {
+            "value": "#5bb7ff",
+            "opacity": 1
+          },
+          "Blue 400": {
+            "value": "#b4ddff",
+            "opacity": 1
+          },
+          "Blue 300": {
+            "value": "#d4ecff",
+            "opacity": 1
+          },
+          "Blue 200": {
+            "value": "#e2f2ff",
+            "opacity": 1
+          },
+          "Blue 100": {
+            "value": "#ecf6ff",
+            "opacity": 1
+          },
+          "Blue 50": {
+            "value": "#f6fbff",
+            "opacity": 1
+          }
+        },
+        "Gray": {
+          "Gray 900": {
+            "value": "#222729",
+            "opacity": 1
+          },
+          "Gray 800": {
+            "value": "#353c3f",
+            "opacity": 1
+          },
+          "Gray 700": {
+            "value": "#4a5256",
+            "opacity": 1
+          },
+          "Gray 600": {
+            "value": "#5e696e",
+            "opacity": 1
+          },
+          "Gray 500": {
+            "value": "#6e777c",
+            "opacity": 1
+          },
+          "Gray 400": {
+            "value": "#aeb7bc",
+            "opacity": 1
+          },
+          "Gray 300": {
+            "value": "#cfd6d9",
+            "opacity": 1
+          },
+          "Gray 200": {
+            "value": "#e7edf0",
+            "opacity": 1
+          },
+          "Gray 100": {
+            "value": "#f1f4f6",
+            "opacity": 1
+          },
+          "Gray 50": {
+            "value": "#f7f9fa",
+            "opacity": 1
+          }
+        },
+        "Red": {
+          "Red 900": {
+            "value": "#792523",
+            "opacity": 1
+          },
+          "Red 800": {
+            "value": "#9f3433",
+            "opacity": 1
+          },
+          "Red 700": {
+            "value": "#c54343",
+            "opacity": 1
+          },
+          "Red 600": {
+            "value": "#d64c4c",
+            "opacity": 1
+          },
+          "Red 500": {
+            "value": "#da5b5b",
+            "opacity": 1
+          },
+          "Red 400": {
+            "value": "#de6969",
+            "opacity": 1
+          },
+          "Red 300": {
+            "value": "#e68686",
+            "opacity": 1
+          },
+          "Red 200": {
+            "value": "#f2b2b2",
+            "opacity": 1
+          },
+          "Red 100": {
+            "value": "#fad8d8",
+            "opacity": 1
+          },
+          "Red 50": {
+            "value": "#ffefef",
+            "opacity": 1
+          }
+        },
+        "Yellow": {
+          "Yellow 900": {
+            "value": "#e4a400",
+            "opacity": 1
+          },
+          "Yellow 800": {
+            "value": "#fbb500",
+            "opacity": 1
+          },
+          "Yellow 700": {
+            "value": "#fdc100",
+            "opacity": 1
+          },
+          "Yellow 600": {
+            "value": "#ffcc00",
+            "opacity": 1
+          },
+          "Yellow 500": {
+            "value": "#ffd633",
+            "opacity": 1
+          },
+          "Yellow 400": {
+            "value": "#ffe066",
+            "opacity": 1
+          },
+          "Yellow 300": {
+            "value": "#ffe88d",
+            "opacity": 1
+          },
+          "Yellow 200": {
+            "value": "#fff0b3",
+            "opacity": 1
+          },
+          "Yellow 100": {
+            "value": "#fff4c6",
+            "opacity": 1
+          },
+          "Yellow 50": {
+            "value": "#fff7d9",
+            "opacity": 1
+          }
+        },
+        "Green": {
+          "Green 900": {
+            "value": "#018827",
+            "opacity": 1
+          },
+          "Green 800": {
+            "value": "#0a9a32",
+            "opacity": 1
+          },
+          "Green 700": {
+            "value": "#10ac4c",
+            "opacity": 1
+          },
+          "Green 600": {
+            "value": "#15bd66",
+            "opacity": 1
+          },
+          "Green 500": {
+            "value": "#41ca80",
+            "opacity": 1
+          },
+          "Green 400": {
+            "value": "#6cd69a",
+            "opacity": 1
+          },
+          "Green 300": {
+            "value": "#97e2b4",
+            "opacity": 1
+          },
+          "Green 200": {
+            "value": "#c2eece",
+            "opacity": 1
+          },
+          "Green 100": {
+            "value": "#d7f4df",
+            "opacity": 1
+          },
+          "Green 50": {
+            "value": "#ebfaef",
+            "opacity": 1
+          }
+        },
+        "Oxford": {
+          "Oxford 900": {
+            "value": "#030319",
+            "opacity": 1
+          },
+          "Oxford 800": {
+            "value": "#0c0c30",
+            "opacity": 1
+          },
+          "Oxford 700": {
+            "value": "#202042",
+            "opacity": 1
+          },
+          "Oxford 600": {
+            "value": "#333354",
+            "opacity": 1
+          },
+          "Oxford 500": {
+            "value": "#474766",
+            "opacity": 1
+          },
+          "Oxford 400": {
+            "value": "#5a5a78",
+            "opacity": 1
+          },
+          "Oxford 300": {
+            "value": "#73738f",
+            "opacity": 1
+          },
+          "Oxford 200": {
+            "value": "#a7a7bf",
+            "opacity": 1
+          },
+          "Oxford 100": {
+            "value": "#c1c1d7",
+            "opacity": 1
+          },
+          "Oxford 50": {
+            "value": "#dadaee",
+            "opacity": 1
+          }
+        },
+        "KGM Astral Aura": {
+          "Purple 50": {
+            "value": "#e8e7ff",
+            "opacity": 1
+          },
+          "Purple 100": {
+            "value": "#dddcf4",
+            "opacity": 1
+          },
+          "Purple 200": {
+            "value": "#d1d0e9",
+            "opacity": 1
+          },
+          "Purple 300": {
+            "value": "#bab9d2",
+            "opacity": 1
+          },
+          "Purple 400": {
+            "value": "#8b8aa5",
+            "opacity": 1
+          },
+          "Purple 500": {
+            "value": "#5d5b78",
+            "opacity": 1
+          },
+          "Purple 600": {
+            "value": "#2e2c4b",
+            "opacity": 1
+          },
+          "Purple 700": {
+            "value": "#272541",
+            "opacity": 1
+          },
+          "Purple 800": {
+            "value": "#1f1e36",
+            "opacity": 1
+          },
+          "Purple 900": {
+            "value": "#100f21",
+            "opacity": 1
+          }
+        },
+        "KGM Gold": {
+          "Gold 50": {
+            "value": "#f7e9c9",
+            "opacity": 1
+          },
+          "Gold 100": {
+            "value": "#e8d6af",
+            "opacity": 1
+          },
+          "Gold 200": {
+            "value": "#e0cda2",
+            "opacity": 1
+          },
+          "Gold 300": {
+            "value": "#d8c394",
+            "opacity": 1
+          },
+          "Gold 400": {
+            "value": "#d0ba87",
+            "opacity": 1
+          },
+          "Gold 500": {
+            "value": "#cab27a",
+            "opacity": 1
+          },
+          "Gold 600": {
+            "value": "#c4a96c",
+            "opacity": 1
+          },
+          "Gold 700": {
+            "value": "#b89d5e",
+            "opacity": 1
+          },
+          "Gold 800": {
+            "value": "#ac9050",
+            "opacity": 1
+          },
+          "Gold 900": {
+            "value": "#9b7f40",
+            "opacity": 1
+          }
+        }
+      },
+      "Sementic": {
+        "Primary": {
+          "Normal": {
+            "value": "#0a93ff",
+            "opacity": 1,
+            "description": "blue 600"
+          },
+          "Strong": {
+            "value": "#0779df",
+            "opacity": 1,
+            "description": "blue 700"
+          },
+          "Heavy": {
+            "value": "#075db4",
+            "opacity": 1,
+            "description": "blue 800"
+          }
+        },
+        "Background": {
+          "Primary": {
+            "value": "#ffffff",
+            "opacity": 1,
+            "description": "white"
+          },
+          "Secondary": {
+            "value": "#f1f4f6",
+            "opacity": 1,
+            "description": "gray 100"
+          },
+          "Tertiary": {
+            "value": "#e7edf0",
+            "opacity": 1,
+            "description": "gray 200"
+          }
+        },
+        "Label": {
+          "Primary": {
+            "value": "#222729",
+            "opacity": 1,
+            "description": "gray 900"
+          },
+          "Secondary": {
+            "value": "#5e696e",
+            "opacity": 1,
+            "description": "gray 600"
+          }
+        },
+        "Social": {
+          "Kakao": {
+            "value": "#fee500",
+            "opacity": 1
+          },
+          "Naver": {
+            "value": "#03cf5d",
+            "opacity": 1
+          },
+          "Apple": {
+            "value": "#000000",
+            "opacity": 1
+          },
+          "Google": {
+            "value": "#f2f2f2",
+            "opacity": 1
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "Display": {
+      "D1B-48": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 48,
+        "fontWeight": 700,
+        "lineHeight": 68,
+        "letterSpacing": -0.20000000298023224
+      },
+      "D2B-40": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 40,
+        "fontWeight": 700,
+        "lineHeight": 56,
+        "letterSpacing": 0
+      },
+      "D3B-36": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 36,
+        "fontWeight": 700,
+        "lineHeight": 50,
+        "letterSpacing": 0
+      },
+      "D4B-32": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 32,
+        "fontWeight": 700,
+        "lineHeight": 44,
+        "letterSpacing": 0
+      },
+      "D5B-28": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 28,
+        "fontWeight": 700,
+        "lineHeight": 40,
+        "letterSpacing": 0
+      },
+      "D6B-24": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 24,
+        "fontWeight": 700,
+        "lineHeight": 38,
+        "letterSpacing": 0
+      }
+    },
+    "Header": {
+      "H1B-26": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 26,
+        "fontWeight": 700,
+        "lineHeight": 38,
+        "letterSpacing": 0
+      },
+      "H2B-24": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 24,
+        "fontWeight": 700,
+        "lineHeight": 36,
+        "letterSpacing": 0
+      },
+      "H3B-22": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 22,
+        "fontWeight": 700,
+        "lineHeight": 34,
+        "letterSpacing": 0
+      },
+      "H4B-20": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 20,
+        "fontWeight": 700,
+        "lineHeight": 30,
+        "letterSpacing": 0
+      },
+      "H5B-19": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "lineHeight": 26,
+        "letterSpacing": 0
+      },
+      "H6B-17": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 17,
+        "fontWeight": 700,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "H7B-16": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "H8B-15": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 15,
+        "fontWeight": 700,
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "H9B-14": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "H10B-13": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 13,
+        "fontWeight": 700,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "H11B-11": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Bold",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "lineHeight": 16,
+        "letterSpacing": 0
+      },
+      "H1M-26": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 26,
+        "fontWeight": 500,
+        "lineHeight": 38,
+        "letterSpacing": 0
+      },
+      "H2M-24": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 24,
+        "fontWeight": 500,
+        "lineHeight": 36,
+        "letterSpacing": 0
+      },
+      "H3M-22": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 22,
+        "fontWeight": 500,
+        "lineHeight": 34,
+        "letterSpacing": 0
+      },
+      "H4M-20": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 20,
+        "fontWeight": 500,
+        "lineHeight": 30,
+        "letterSpacing": 0
+      },
+      "H5M-19": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 19,
+        "fontWeight": 500,
+        "lineHeight": 26,
+        "letterSpacing": 0
+      },
+      "H6M-17": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 17,
+        "fontWeight": 500,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "H7M-16": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 16,
+        "fontWeight": 500,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "H8M-15": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 15,
+        "fontWeight": 500,
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "H9M-14": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "H10M-13": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 13,
+        "fontWeight": 500,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "H11M-11": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 11,
+        "fontWeight": 500,
+        "lineHeight": 16,
+        "letterSpacing": 0
+      },
+      "H1SB-26": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 26,
+        "fontWeight": 600,
+        "lineHeight": 38,
+        "letterSpacing": 0
+      },
+      "H2SB-24": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "lineHeight": 36,
+        "letterSpacing": 0
+      },
+      "H3SB-22": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 22,
+        "fontWeight": 600,
+        "lineHeight": 34,
+        "letterSpacing": 0
+      },
+      "H4SB-20": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 20,
+        "fontWeight": 600,
+        "lineHeight": 30,
+        "letterSpacing": 0
+      },
+      "H5SB-19": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 19,
+        "fontWeight": 600,
+        "lineHeight": 26,
+        "letterSpacing": 0
+      },
+      "H6SB-17": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 17,
+        "fontWeight": 600,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "H7SB-16": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "H8SB-15": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 15,
+        "fontWeight": 600,
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "H9SB-14": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "H10SB-13": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "H11SB-11": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "SemiBold",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "lineHeight": 16,
+        "letterSpacing": 0
+      }
+    },
+    "Body": {
+      "B1R-26": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 24,
+        "fontWeight": 400,
+        "lineHeight": 38,
+        "letterSpacing": 0
+      },
+      "B2R-24": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 24,
+        "fontWeight": 400,
+        "lineHeight": 36,
+        "letterSpacing": 0
+      },
+      "B3R-22": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 22,
+        "fontWeight": 400,
+        "lineHeight": 34,
+        "letterSpacing": 0
+      },
+      "B4R-20": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 20,
+        "fontWeight": 400,
+        "lineHeight": 30,
+        "letterSpacing": 0
+      },
+      "B5R-19": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 19,
+        "fontWeight": 400,
+        "lineHeight": 26,
+        "letterSpacing": 0
+      },
+      "B6R-17": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 17,
+        "fontWeight": 400,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "B7R-16": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "B8R-15": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "B9R-14": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "B10R-13": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 13,
+        "fontWeight": 400,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "B11R-11": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "lineHeight": 16,
+        "letterSpacing": 0
+      }
+    },
+    "Button": {
+      "B1M-19": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 19,
+        "fontWeight": 500,
+        "lineHeight": 26,
+        "letterSpacing": 0
+      },
+      "B2M-17": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 17,
+        "fontWeight": 500,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "B3M-15": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 15,
+        "fontWeight": 500,
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "B4M-13": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 13,
+        "fontWeight": 500,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "B5M-11": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 11,
+        "fontWeight": 500,
+        "lineHeight": 16,
+        "letterSpacing": 0
+      }
+    },
+    "Label": {
+      "L1M-16": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 16,
+        "fontWeight": 500,
+        "lineHeight": 18,
+        "letterSpacing": 0
+      },
+      "L2M-14": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "lineHeight": 14,
+        "letterSpacing": 0
+      },
+      "L3M-12": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 12,
+        "fontWeight": 500,
+        "lineHeight": 12,
+        "letterSpacing": 0
+      },
+      "L4M-10": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Medium",
+        "fontSize": 10,
+        "fontWeight": 500,
+        "lineHeight": 10,
+        "letterSpacing": 0
+      }
+    },
+    "Paragraph": {
+      "P1R-17": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 17,
+        "fontWeight": 400,
+        "lineHeight": 30,
+        "letterSpacing": -0.20000000298023224
+      },
+      "P2R-15": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "lineHeight": 26,
+        "letterSpacing": -0.20000000298023224
+      },
+      "P3R-14": {
+        "fontFamily": "Pretendard",
+        "fontStyle": "Regular",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "lineHeight": 22,
+        "letterSpacing": -0.20000000298023224
+      }
+    }
+  },
+  "effects": {
+    "Shadow_1DP": {
+      "effects": [
+        {
+          "type": "drop-shadow",
+          "color": "#353c3f",
+          "opacity": 0.03999999910593033,
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 4,
+          "spread": 0
+        }
+      ]
+    },
+    "Shadow_2DP": {
+      "effects": [
+        {
+          "type": "drop-shadow",
+          "color": "#353c3f",
+          "opacity": 0.03999999910593033,
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 16,
+          "spread": 0
+        }
+      ]
+    },
+    "Shadow_4DP": {
+      "effects": [
+        {
+          "type": "drop-shadow",
+          "color": "#353c3f",
+          "opacity": 0.07999999821186066,
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 20,
+          "spread": 0
+        }
+      ]
+    },
+    "Shadow_8DP": {
+      "effects": [
+        {
+          "type": "drop-shadow",
+          "color": "#353c3f",
+          "opacity": 0.10000000149011612,
+          "offsetX": 0,
+          "offsetY": 4,
+          "blur": 32,
+          "spread": 0
+        }
+      ]
+    },
+    "Shadow_16DP": {
+      "effects": [
+        {
+          "type": "drop-shadow",
+          "color": "#353c3f",
+          "opacity": 0.1599999964237213,
+          "offsetX": 0,
+          "offsetY": 8,
+          "blur": 32,
+          "spread": 0
+        }
+      ]
+    }
+  },
+  "spacing": {}
+}
