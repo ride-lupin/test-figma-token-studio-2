@@ -94,11 +94,14 @@ function validateTokenValue(type, value, path) {
       if (typeof value !== 'object' || value === null) {
         error(`typography 형식 오류 (${path}): 객체이어야 합니다`);
       } else {
-        const required = ['fontFamily', 'fontWeight', 'fontSize', 'lineHeight'];
+        const required = ['fontWeight', 'fontSize', 'lineHeight'];
         for (const field of required) {
           if (!(field in value)) {
             error(`typography 필수 필드 누락 (${path}): ${field}`);
           }
+        }
+        if (!('fontFamily' in value)) {
+          warn(`typography fontFamily 누락 (${path}): 상위 컨텍스트에서 상속되지 않을 경우 렌더링 문제가 발생할 수 있습니다`);
         }
       }
       break;
